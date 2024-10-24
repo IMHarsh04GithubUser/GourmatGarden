@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+DK+Uloopet:wght@100..400&display=swap');
+
+.AboutUsMain {
+    padding: 0;
+}
+
+.AboutUsPage {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Dining.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+
+.borderTop {
+    border-top: solid 3px red;
+}
+
+.AboutFirstPage {
+    text-align: center;
+    padding-top: 140px;
+}
+
+.AboutFirstPage p {
+    font-size: 6vw;
+    color: white;
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 600;
+    animation-name: move2;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    transition: ease-in-out 1s;
+}
+
+@keyframes move2 {
+    0% {
+        transform: scale(0.6);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.About1 {
+    grid-area: ab1;
+    padding-left: 80px;
+    padding-top: 100px;
+    line-height: 1.75;
+}
+
+.About2 {
+    grid-area: ab2;
+    background-size: cover;
+    width: 100%;
+    max-width: 400px;
+    max-height: 225px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    margin-top: 40px;
+}
+.About2 img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.AboutUsContent {
+    display: grid;
+    grid-template-areas: 'ab1 ab2';
+    gap: 40px;
+    padding: 20px 40px 40px 0px;
+    margin-top: 20px;
+    height: auto;
+}
+
+.About1 h1 {
+    border-top: solid 1px red;
+    font-size: 4vw;
+    color: red;
+    text-align: center;
+}
+
+.About1 p {
+    font-size: 1vw;
+}
+
+#dimg1 {
+    transition: transform 0.4s ease-in-out;
+}
+
+#dimg1:hover {
+    transform: scale(1.1);
+}
+
+.About1 input[type="button"] {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-radius: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .AboutUsPage {
+        height: 300px;
+    }
+    .AboutFirstPage {
+        padding-top: 100px;
+    }
+    .AboutFirstPage p {
+        font-size: 8vw;
+        position: absolute;
+        top: 20%;
+        left: 30%;
+        
+    }
+    .AboutUsContent {
+        grid-template-areas:
+            'ab1'
+            'ab2';
+        gap: 20px;
+        padding: 20px;
+    }
+    .About1 {
+        padding-left: 20px;
+        padding-top: 50px;
+    }
+    .About1 h1 {
+        font-size: 6vw;
+    }
+    .About1 p {
+        font-size: 2vw;
+    }
+    .About2 {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    .About1 input[type="button"] {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        border-radius: 0;
+    }
+}
+
+@media screen and (max-width: 428px) {
+    .AboutUsPage {
+        height: 250px;
+    }
+    .AboutFirstPage {
+        padding-top: 80px;
+    }
+    .AboutFirstPage p {
+        font-size: 10vw;
+        
+    }
+    .AboutUsContent {
+        display: flex;
+        flex-direction: column;
+        height: max-content;
+        gap: 20px;
+    }
+    .About1 {
+        width: 100%;
+        max-height: max-content;
+        padding: 20px;
+    }
+    .About1 h1 {
+        font-size: 8vw;
+    }
+    .About1 p {
+        font-size: 4vw;
+    }
+    .About2 {
+        width: 100%;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .About1 input[type="button"] {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        border-radius: 0;
+    }
+}

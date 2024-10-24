@@ -1,0 +1,197 @@
+.Add{
+    width: 70%;
+    margin-left: max(5vw,25px);
+    margin-top:50px;
+    color: #6d6d6d;
+    font-size: 16px;
+
+}
+
+.flex_col{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+.add form{
+    gap: 20px;
+
+}
+
+.flex_col
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.addimg{
+    width: 100px;
+    height: 100px;
+}
+
+.addproductname,.add_product_disc{
+    width: max(40%,280px);
+
+}
+
+.addproductname,.add_product_disc textarea,.productname{
+    padding: 10px;
+}
+
+.add_cat_price{
+    display: flex;
+    gap: 30px;
+}
+
+.add_cat_price select,.add_cat_price input{
+    max-width: 120px;
+    padding: 10px;
+}
+
+
+.add_button {
+    appearance: button;
+    background-color: #1899D6;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .8px;
+    line-height: 20px;
+    margin: 0;
+    outline: none;
+    overflow: visible;
+    padding: 13px 19px;
+    text-align: center;
+    text-transform: uppercase;
+    touch-action: manipulation;
+    transform: translateZ(0);
+    transition: filter .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    max-width: 120px;
+   }
+   
+   .add_button:after {
+    background-clip: padding-box;
+    background-color: #1CB0F6;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    bottom: -4px;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+   }
+   
+   .add_button:main, .add_button:focus {
+    user-select: auto;
+   }
+   
+   .add_button:hover:not(:disabled) {
+    filter: brightness(1.1);
+   }
+   
+   .add_button:disabled {
+    cursor: auto;
+   }
+   
+   .add_button:active:after {
+    border-width: 0 0 0px;
+   }
+   
+   .add_button:active {
+    padding-bottom: 10px;
+   }
+
+   /*LIST CSS*/
+   .list_table {
+    position: absolute;
+    top: 20%;
+    left: 60%;
+    transform: translate(-50%,-50%);
+    width: fit-content
+}
+
+.list_table_format {
+    display: flex;   
+    flex-wrap: nowrap; 
+    align-items: center;
+    gap: 100px;
+    padding: 12px 15px;
+    border: 1px solid #cacaca;
+    font-size: 13px;
+}
+
+.list_table_format.title {
+    background-color: #f9f9f9;
+}
+
+.list_table_format img {
+    width: 50px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .list_table_format {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .list_table_format.title {
+        display: none;
+    }
+}
+
+/*ORDERS CSS*/
+.order_Text{
+    position:absolute;
+    left: 50%;
+    font-size: 50px;
+}
+
+.order_table{
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%,-50%);
+    width: fit-content;
+    
+    align-items: center;
+    text-align: center;
+    overflow: scroll;
+    
+    
+}
+.order_table::-webkit-scrollbar{
+    display: none;
+}
+
+.item_name{
+    color: blue;
+    
+}
+
+.totalAmt{
+    margin-right: 20%;
+}
+
+.address{
+    padding-right: 20%;
+    
+    position: relative;
+    right: 15%;
+}
+
+

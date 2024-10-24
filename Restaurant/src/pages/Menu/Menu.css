@@ -1,0 +1,291 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
+.MenuLinkContainer{
+    padding: 0;
+    width: 100%;
+}
+
+.borderTop{
+    border: solid 5px cyan;
+}
+
+.BackgroundWelcome{
+   
+    height: 640px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('../../components/Images/Restaurant.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    
+}
+
+.btn-glow {
+    
+    --glow-color: rgb(217, 176, 255);
+    --glow-spread-color: rgba(191, 123, 255, 0.781);
+    --enhanced-glow-color: rgb(231, 206, 255);
+    --btn-color: rgb(100, 61, 136);
+    margin-left: 40%;
+    border: .25em solid var(--glow-color);
+    padding: 1em 3em;
+    color: var(--glow-color);
+    font-size: 15px;
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border-radius: 1em;
+    outline: none;
+    box-shadow: 0 0 1em .25em var(--glow-color),
+           0 0 4em 1em var(--glow-spread-color),
+           inset 0 0 .75em .25em var(--glow-color);
+    text-shadow: 0 0 .5em var(--glow-color);
+    position: relative;
+    transition: all 0.3s;
+   }
+   
+   .btn-glow::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--glow-spread-color);
+    filter: blur(2em);
+    opacity: .7;
+    transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+   }
+   
+   .btn-glow:hover {
+    color: var(--btn-color);
+    background-color: var(--glow-color);
+    box-shadow: 0 0 1em .25em var(--glow-color),
+           0 0 4em 2em var(--glow-spread-color),
+           inset 0 0 .75em .25em var(--glow-color);
+   }
+   
+   .btn-glow:active {
+    box-shadow: 0 0 0.6em .25em var(--glow-color),
+           0 0 2.5em 2em var(--glow-spread-color),
+           inset 0 0 .5em .25em var(--glow-color);
+   }
+
+.WelcomeToMenu p:nth-child(1){
+    text-align: center;
+    padding-top:8vw;
+    color: white;
+    font-weight: 700;
+    
+    white-space: nowrap;
+    font-size: 5vw;
+    font-family: "Caveat", cursive;
+    animation-name: scale1;
+    animation-duration: 1s;
+    animation-direction: alternate-reverse;
+    transition: transfrom 0.5s ease-in-out;
+}
+
+.WelcomeToMenu p:nth-child(2){
+    text-align: center;
+    padding-top:8vw;
+    color: red;
+    font-weight: 700;
+    line-height: 0px;
+    white-space: nowrap;
+    font-size: 8vw;
+    font-family: "Caveat", cursive;
+    animation-name: scale2;
+    animation-duration: 1s;    
+    animation-direction: alternate-reverse;
+    transition: transfrom 0.5s ease-in-out;
+    text-shadow: 0 0 20px cyan;
+}
+
+.WelcomeToMenu p:nth-child(3){
+    float: right;
+    color: blue;
+    position: fixed;
+    cursor: pointer;
+    
+}
+
+@keyframes scale1 {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes scale2 {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.card-sm{
+    
+    width: 10rem;
+    position: absolute;
+    z-index: 1;
+    top:35%;
+    border-radius: 10px;
+    
+    
+    
+}
+
+.list-group{
+    text-align: center;
+    border-radius: 10px;
+    
+    
+}
+
+.list-group:hover{
+    color: yellow;
+}
+
+
+
+.TypesofFood{
+    display: flex;
+    gap: 20px;
+    padding-left: 35vw;
+}
+
+li{
+    list-style-type: none;
+    color: white;
+}
+
+@media screen and (min-width:360px) and (max-width:428px){
+   .btn-glow{
+        position: absolute;
+        top:75%;            
+        left: -8%;
+        padding: 20px;
+   }
+     
+}
+
+@media screen and (max-width:320px){
+    .btn-glow{
+         position: absolute;
+         top:80%;         
+         left: -10%;
+         padding: 20px;
+    }
+}
+/*CSS FOR MENU TYPES CONTAINER*/
+.LunchContainer{
+    font-size: 4vw;
+    text-align: center;
+    padding:20px;
+    height: max-content;
+    background-color: red;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+    
+}
+
+.SaladItems1{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding:80px 0 20px 0;
+
+    justify-content: center;
+    overflow: hidden;
+}
+
+
+
+.card{
+    width: 35rem;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-family: "Archivo Narrow", sans-serif;
+    font-weight: 600;
+    
+}
+
+.card:hover{
+    box-shadow: red 0px 5px 15px;
+}
+
+/* .card:nth-child(5){
+    margin-right:580px;
+} */
+
+.card-img-top{
+    height: 400px;
+    transition: transform 1.8 ease-in-out;
+}
+
+.card-img-top:hover{
+    transform: scale(1.01);
+    
+    
+}
+
+/*STARTER ITEMS*/
+
+.Itemsrate{
+    float: right;
+}
+
+.StarterItems{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding:80px 0 20px 0;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/*DRINKS CSS*/
+
+.DrinksItems{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding:80px 0 20px 0;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/*LUNCH CSS*/
+
+.LunchItems{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding:80px 0 20px 0;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/*DRINKS CSS*/
+
+.DessertItems{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding:80px 0 20px 0;
+    justify-content: center;
+    overflow: hidden;
+}
+
+
+
+/* *{border: solid 1px;} */
+
+

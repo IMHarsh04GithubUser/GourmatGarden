@@ -1,0 +1,640 @@
+@import url('https://fonts.googleapis.com/css2?family=Fustat:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.GourmetGardenRestaurant {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+}
+
+
+
+.navbaritems {
+    margin-right: 80px;
+    align-items: center;
+}
+
+.Logo {
+    width: 100px;
+    height: 100px;
+    mix-blend-mode: lighten;
+    border-radius: 20px;
+    margin-left: 20px;
+}
+
+.Logo:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: ease-in-out 1s;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+}
+
+.nav-item {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+a:hover {
+    transform: scale(1.2);
+}
+
+.BookSeat {
+    margin-right: 20px;
+}
+
+.glowbtn1 {
+    padding: 17px 40px;
+    margin-left: 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: 0;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 15px;
+    transition: all 0.5s ease;
+}
+
+.glowbtn1:hover {
+    letter-spacing: 3px;
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+}
+
+.glowbtn1:active {
+    letter-spacing: 3px;
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+    transform: translateY(10px);
+    transition: 100ms;
+}
+
+.SignIn {
+    border: solid 1px white;
+    border-radius: 100%;
+    height: 60px;
+    width: 60px;
+    color: white;
+    padding: 15px 0 0 5px;
+    margin-left: 20px;
+    cursor: pointer;
+
+
+}
+
+.SignIn:hover {
+    transform: scale(1.1);
+}
+
+.Homepagebgimg {
+    border-top: solid 1px red;
+    max-height: max-content;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('../assets/Images/Restaurant.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+/*LOGIN PAGE CSS*/
+
+.LoginPage {
+    border: solid 1px blue;
+    margin: 20px;
+    width: max-content;
+    max-height: max-content;
+    padding: 20px;
+    position: absolute;
+    left: 35%;
+    top: 10%;
+    border-radius: 20px;
+    background-color: #f9f9f9;
+    z-index: 1;
+
+}
+
+.LoginContent div:nth-child(1) {
+    /* border: solid 1px; */
+    grid-area: login1;
+    font-family: "Poppins", sans-serif;
+}
+
+.LoginContent div:nth-child(2) {
+    /* border: solid 1px; */
+    grid-area: login2;
+    font-family: "Poppins", sans-serif;
+}
+
+.LoginContent {
+    display: grid;
+    grid-template-areas: 'login1 login2';
+    gap: 30px;
+}
+
+.cartlogo{
+    height: 50px;
+    width: 50px;
+}
+
+.SocialMediaIconsLogin {
+    /* border: solid 1px; */
+    margin: 20px 0 20px 0;
+    display: flex;
+    gap: 20%;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+label {
+    padding: 10px 0 10px 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+}
+
+.forgottext {
+    position: relative;
+    float: inline-end;
+    cursor: pointer;
+    color: blue;
+
+}
+
+.forgottext:hover {
+    color: red;
+}
+
+.btnlogin {
+    margin: 8% 0 0 38%;
+}
+
+.SignupAccount div{
+    cursor: pointer;
+
+}
+
+@media screen and (min-width:360px) and (max-width:428px) {
+    .LoginPage{
+        width: 200px;
+        height: 200px;
+        overflow: scroll;
+        margin-right: 120px;
+        padding: 20px;
+    }
+    
+}
+
+/*CSS FOR WELCOMEPAGE1*/
+
+.WelcomeContainer {
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    max-width: max-content;
+
+}
+
+.AccountDisplay {
+    border: solid 1px white;
+}
+
+.WelcomeText {
+
+    width: 500px;
+    margin: 100px 0 0 150px;
+    font-size: 40px;
+
+}
+
+.welcometext1,
+.welcometext2 {
+    color: white;
+    font-family: "Fustat", sans-serif;
+
+}
+
+.welcometext1 {
+    font-family: bolder;
+}
+
+.welcometext2 {
+    font-size: 2vw;
+}
+
+.button1 {
+    font-weight: bold;
+
+}
+
+.button1:hover {
+    background-color: red;
+    color: white;
+    border: none;
+    transition: ease-in-out;
+    transform: scale(1.2);
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 0%;
+    /* border: solid 1px white; */
+
+
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    margin-left: 10%;
+    /* border: solid 1px white; */
+    border-radius: 10%;
+    background: none;
+}
+
+.slide img {
+    width: 100%;
+    display: block;
+    border-radius: 60%;
+    height: 400px;
+    width: 400px;
+    filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.5));
+    /* border: solid 1px white; */
+}
+
+@media screen and (min-width:360px) and (max-width:428px) {
+    .WelcomeContainer {
+        width: 100%;
+        padding-bottom: 100px;
+
+
+
+    }
+
+    .WelcomeText {
+        display: flex;
+        flex-direction: column;
+        width: 700px;
+        font-size: 40px;
+        margin-left: 30px;
+
+    }
+
+    .slider img {
+        display: none;
+    }
+
+    .welcometext1 {
+        font-family: bolder;
+        font-size: 10vw;
+
+
+    }
+
+    .welcometext2 {
+        font-size: 3.3vw;
+
+    }
+
+
+
+}
+
+
+
+/*CSS FOR WELCOMEPAGE2*/
+
+
+.WelcomeHR {
+    height: 20px;
+    background-color: red;
+}
+
+
+.WelcomeHereContent1 {
+    grid-area: w1;
+    max-width: max-content;
+
+}
+
+.WelcomeHereContent2 {
+    grid-area: w2;
+
+}
+
+.WelcomeHere {
+    display: grid;
+    grid-template-areas: 'w1 w2';
+    margin: 80px;
+    gap: 50px;
+}
+
+.WelcomeHereContent1 h1 {
+    color: #d6675a;
+    font-family: "Kanit", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+
+}
+
+.WelcomeHereContent1 p {
+
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 30px;
+    font-size: 1.2vw;
+
+}
+
+.WelcomeFoodItems {
+    height: 300px;
+    width: 300px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    transition: transform 0.8s ease-in-out;
+}
+
+.WelcomeFoodItems:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: ease-in-out 1s;
+}
+
+@media screen and (min-width:360px) and (max-width:428px) {
+    .WelcomeHere {
+        display: flex;
+        flex-direction: column;
+        margin: 10vw;
+    }
+
+    .WelcomeHereContent1 h1 {
+        color: #d6675a;
+        font-family: "Kanit", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 8vw;
+
+    }
+
+    .WelcomeHereContent1 p {
+
+        font-family: "Raleway", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 900;
+        font-style: normal;
+        line-height: 30px;
+        font-size: 2.5vw;
+
+    }
+
+}
+
+/*CSS FOR DISCOVER MENU */
+
+.MenuHeading {
+    border: solid 20px red;
+    text-align: center;
+    font-size: 25px;
+    background-color: red;
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+
+}
+
+.Menu1 {
+    grid-area: i1;
+    background-image: url('../assets/Images/Menu1.jpg');
+    background-size: cover;
+    
+    
+}
+
+
+.Menu2 {
+    grid-area: i2;
+    background-image: url('../assets/Images/Menu5.webp');
+    background-size: cover;
+}
+
+.Menu3 {
+    grid-area: i3;
+    background-image: url('../assets/Images/Menu2.jpeg');
+    background-size: cover;
+}
+
+.Menu4 {
+    grid-area: i4;
+    background-image: url('../assets/Images/Menu3.jpeg');
+    background-size: cover;
+}
+
+.Menu5 {
+    grid-area: i5;
+    background-image: url('../assets/Images/Menu4.webp');
+    background-size: cover;
+}
+
+.MenuContent {
+    background-color: #efefef;
+    display: grid;
+    grid-template-areas: 'i1 i2 i3'
+        'i4 i2 i5';
+
+    padding: 10px;
+    gap: 10px;
+
+
+}
+
+.MenuContent div {
+
+    height: 200px;
+    text-align: center;
+    border-radius: 10px;
+
+
+}
+
+.MenuContent div:hover {
+
+    opacity: 0.8;
+
+
+}
+
+.MenuContent div button {
+    opacity: 0.9;
+    margin-top: 70px;
+}
+
+
+
+.MenuContent .Menu2 {
+    height: 410px;
+}
+
+.MenuDessert {
+    margin: 120px 20px 0 20px;
+    background-image: url('../assets/Images/Menu5.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+/*CSS FOR "REGISTER YOUR TABLE" FORM*/
+
+.FormBorder {
+    border: solid 10px red;
+}
+
+.FormHeading {
+
+    grid-area: f1;
+}
+
+.MainForm {
+
+    grid-area: f2;
+    
+
+}
+
+.FormPic {
+    background-image: url('../assets/Images/FormPic.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 990px;
+    grid-area: f3;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.FormContainer {
+    display: grid;
+    grid-template-areas: 'f1 f3'
+
+        'f2 f3';
+
+    /* border: solid 1px; */
+    padding: 10px;
+    gap: 10px;
+
+}
+
+.FormContainer div {
+
+    /* border: solid 1px; */
+    padding: 10px;
+
+}
+
+.FormHeading h1 {
+    font-family: "Fustat", sans-serif;
+    font-weight: 600;
+    text-align: center;
+    padding-top: 50px;
+
+}
+
+.FormHeading span {
+    color: red;
+    font-style: italic;
+
+}
+
+.Form {
+    background-color: #efefef;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+@media screen and (min-width:360px) and (max-width:428px) {
+    .FormPic {
+        display: none;
+    }
+
+    .Form {
+        background-color: #efefef;
+        border-radius: 10px;
+        border: solid 1px;
+        width: 90vw;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    }
+
+}
+
+/*CSS FOR FOOTER*/
+
+.contactus {
+    grid-area: fo1;
+}
+
+.opentimes {
+    grid-area: fo2;
+}
+
+.SocialMedia {
+    grid-area: fo3;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.FooterRestaurant {
+
+    background-color: #000000;
+    padding: 10px;
+    display: grid;
+    gap: 10px;
+    grid-template-areas: 'fo1 fo3'
+        'fo2 fo3';
+
+}
+
+.FooterRestaurant div:nth-child(1)>h1,
+.FooterRestaurant div:nth-child(2)>h1,
+.FooterRestaurant div:nth-child(3)>h1 {
+    text-align: center;
+    color: yellow;
+
+}
+
+.FooterRestaurant div:nth-child(1)>p,
+.FooterRestaurant div:nth-child(2)>p,
+.FooterRestaurant div:nth-child(3)>p {
+    text-align: center;
+    font-family: "Kanit", sans-serif;
+    font-weight: 300;
+    color: white;
+
+}
+
+.SocialMedia a {
+    margin: 20px 0 0 50%;
+}

@@ -1,0 +1,17 @@
+.SignUpcontainer{
+    border: solid 1px white;
+    background-color: white;
+    width: 500px;
+    max-height: max-content;
+    padding: 20px;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+input,p{
+    margin-top: 20px;
+}
+
