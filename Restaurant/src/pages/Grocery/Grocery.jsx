@@ -1,6 +1,6 @@
 import Navbar from "../../components/Navbar";
 import "./Grocery.css";
-import Rest from "../../assets/Rest.png";
+import { FaLongArrowAltDown } from "react-icons/fa";
 import {
   Beverages,
   Fresh_Produce,
@@ -14,7 +14,11 @@ const Grocery = () => {
       <div className="Grocery_Header bg-danger p-2 container-fluid">
         <Navbar />
         <div className="text-center">
-          <p className="Gift_Text">PLAY A GAME <br /> <span>AND GET A CHANCE TO WIN THESE ITEMS</span></p>
+          <p className="Gift_Text">
+            PLAY A GAME <br /> <span>AND GET A CHANCE TO WIN THESE ITEMS</span><br />
+            <FaLongArrowAltDown />
+            <span></span>
+          </p>
         </div>
       </div>
 

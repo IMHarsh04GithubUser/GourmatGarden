@@ -11,7 +11,7 @@
     background-image: url(../../assets/Images/Restaurant.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 500px;
+    height: 650px;
     
 }
 
@@ -33,7 +33,7 @@
 .Gift_Text{
     color: Yellow;
     font-size: 60px;
-    margin-top: 5%;
+    margin-top: 10%;
     animation-name: beat;
     animation-duration: 1s;
     animation-iteration-count: infinite;
@@ -42,7 +42,7 @@
 
     &:hover{
         
-        color: orange;
+        color: cyan;
     }
 }
 
