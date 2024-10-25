@@ -1,0 +1,21 @@
+.border_grocery{
+    
+    width: 100%;
+    background-color: blue;
+    height: 20px;
+}
+
+.Grocery_Header{
+    background-image: url(../../assets/Images/Restaurant.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.border_grocery_heading{
+    background-color: red;
+    padding: 2px;
+    color: white; 
+
+}
+

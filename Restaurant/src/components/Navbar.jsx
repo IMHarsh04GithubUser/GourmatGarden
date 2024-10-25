@@ -2,6 +2,7 @@ import Logo from "../assets/Images/Logo.jpeg";
 import styles from "./Homepage.module.css";
 import { NavLink } from "react-router-dom";
 import { GiShoppingCart } from "react-icons/gi";
+import { GiChipsBag } from "react-icons/gi";
 import AccountDisplay from "./AccountDisplay";
 import { useState } from "react";
 
@@ -58,6 +59,11 @@ const Navbar = () => {
                 <li className="nav-item">
                   <NavLink className="nav-link text-warning" to="/order">
                     <GiShoppingCart className={styles.cartlogo}/>
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className='nav-link text-warning' to='/grocery'>
+                  <GiChipsBag className={styles.cartlogo}/>
                   </NavLink>
                 </li>
               </ul>
