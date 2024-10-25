@@ -23,7 +23,7 @@ const Grocery = () => {
         return (
           <>
             <div className="card" style={{width: 18+'rem',height:18+'rem'}} key={id}>
-              <img src={item.src} class="card-img-top" alt="..." />
+              <img src={item.src} class="card-img-top " style={{overflow:"hidden"}} alt="..." />
               <div className="card-body">
                 <p>{item.name}</p>
                 <p>{item.cost}</p>
@@ -41,7 +41,7 @@ const Grocery = () => {
         return (
           <>
             <div className="card" style={{width: 18+'rem',height:18+'rem'}} key={id}>
-              <img src={item.src} class="card-img-top" alt="..." />
+              <img src={item.src} class="card-img-top" style={{overflow:"hidden"}} alt="..." />
               <div className="card-body">
                 <p>{item.name}</p>
                 <p>{item.cost}</p>

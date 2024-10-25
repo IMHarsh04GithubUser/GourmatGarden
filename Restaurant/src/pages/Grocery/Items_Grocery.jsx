@@ -1,32 +1,37 @@
+import TP from './GroceryImg/TP.jpg'
+import GM from './GroceryImg/GM.jpg'
+import Cumin from './GroceryImg/Cumin.jpg'
+import Coriender from './GroceryImg/Coriender.webp'
+import RCP from './GroceryImg/RCP.webp'
 export const spices = [
   {
     id: "1",
     name: "Turnmeric Powder",
-    src: "",
+    src: TP,
     cost: "",
   },
   {
     id: "2",
     name: "Garam Masala",
-    src: "",
+    src: GM,
     cost: "",
   },
   {
     id: "3",
     name: "Cumin Seeds",
-    src: "",
+    src: Cumin,
     cost: "",
   },
   {
     id: "4",
     name: "Coriander Powder",
-    src: "",
+    src: Coriender,
     cost: "",
   },
   {
     id: "5",
     name: "Red Chilli Powder",
-    src: "",
+    src: RCP,
     cost: "",
   },
 ];
@@ -130,35 +135,40 @@ export const Fresh_Produce = [
   },
 ];
 
+import MasalaChai from './GroceryImg/masalaChaiPowder.jpg'
+import Roo from './GroceryImg/Roo.jpg'
+import Jal from './GroceryImg/JalJeera.jpg'
+import TCM from './GroceryImg/TCM.webp'
+import CD from './GroceryImg/CD.webp'
 export const Beverages = [
   {
     id: "1",
     name: "Masala Chai",
-    src: "",
+    src: MasalaChai,
     cost: "",
   },
   {
     id: "2",
     name: "Rooh Afza",
-    src: "",
+    src: Roo,
     cost: "",
   },
   {
     id: "3",
     name: "Jaljeera Mix",
-    src: "",
+    src: Jal,
     cost: "",
   },
   {
     id: "4",
     name: "Tender Coconut Mix",
-    src: "",
+    src: TCM,
     cost: "",
   },
   {
     id: "5",
     name: "Cold Drinks",
-    src: "",
+    src: CD,
     cost: "",
   },
 
