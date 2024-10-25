@@ -3,135 +3,154 @@ import GM from './GroceryImg/GM.jpg'
 import Cumin from './GroceryImg/Cumin.jpg'
 import Coriender from './GroceryImg/Coriender.webp'
 import RCP from './GroceryImg/RCP.webp'
+
 export const spices = [
   {
     id: "1",
     name: "Turnmeric Powder",
     src: TP,
-    cost: "",
+    cost: "₹271",
   },
   {
     id: "2",
     name: "Garam Masala",
     src: GM,
-    cost: "",
+    cost: "₹534",
   },
   {
     id: "3",
     name: "Cumin Seeds",
     src: Cumin,
-    cost: "",
+    cost: "₹547",
   },
   {
     id: "4",
     name: "Coriander Powder",
     src: Coriender,
-    cost: "",
+    cost: "₹117",
   },
   {
     id: "5",
     name: "Red Chilli Powder",
     src: RCP,
-    cost: "",
+    cost: "₹597",
   },
 ];
+
+import Basmati from './GroceryImg/Basmati.webp'
+import Toor from './GroceryImg/Toor.webp'
+import Moong from './GroceryImg/Moong.jpeg'
+import Chana from './GroceryImg/Chana.jpeg'
+import Masoor from './GroceryImg/Masoor.jpg'
 
 export const Pulses_Grains = [
   {
     id: "1",
     name: "Basmati Rice",
-    src: "",
-    cost: "",
+    src: Basmati,
+    cost: "₹248",
   },
   {
     id: "2",
     name: "Toor Dal",
-    src: "",
-    cost: "",
+    src: Toor,
+    cost: "₹567",
   },
   {
     id: "3",
     name: "Moong Dal",
-    src: "",
-    cost: "",
+    src: Moong,
+    cost: "₹398",
   },
   {
     id: "4",
     name: "Chana Dal",
-    src: "",
-    cost: "",
+    src: Chana,
+    cost: "₹252",
   },
   {
     id: "5",
     name: "Masoor Dal",
-    src: "",
-    cost: "",
+    src: Masoor,
+    cost: "₹409",
   },
 ];
+
+import Mustard from './GroceryImg/MustardOil.jpg'
+import Ghee from './GroceryImg/Ghee.jpeg'
+import Atta from './GroceryImg/Atta.jpeg'
+import Besan from './GroceryImg/Besan.jpeg'
+import CO from './GroceryImg/CO.webp'
 
 export const cooking_essential = [
   {
     id: "1",
     name: "Mustard Oil",
-    src: "",
-    cost: "",
+    src: Mustard,
+    cost: "₹183",
   },
   {
     id: "2",
     name: "Ghee",
-    src: "",
-    cost: "",
+    src: Ghee,
+    cost: "₹474",
   },
   {
     id: "3",
     name: "Atta",
-    src: "",
-    cost: "",
+    src: Atta,
+    cost: "₹558",
   },
   {
     id: "4",
     name: "Besan",
-    src: "",
-    cost: "",
+    src: Besan,
+    cost: "₹590",
   },
   {
     id: "5",
     name: "Coconut Oil",
-    src: "",
-    cost: "",
+    src: CO,
+    cost: "₹116",
   },
 ];
+
+import Curry from './GroceryImg/CurryL.jpg'
+import Cor from './GroceryImg/Coriender.webp'
+import Drum from './GroceryImg/DrumS.jpeg'
+import GreenC from './GroceryImg/GreenC.jpeg'
+import BabyP from './GroceryImg/babyP.jpeg'
 
 export const Fresh_Produce = [
   {
     id: "1",
     name: "Curry Leaves",
-    src: "",
-    cost: "",
+    src: Curry,
+    cost: "₹280",
   },
   {
     id: "2",
     name: "Fresh Coriander",
-    src: "",
-    cost: "",
+    src: Cor,
+    cost: "₹538",
   },
   {
     id: "3",
     name: "Drum Sticks",
-    src: "",
-    cost: "",
+    src: Drum,
+    cost: "₹366",
   },
   {
     id: "4",
     name: "Green Chilies",
-    src: "",
-    cost: "",
+    src: GreenC,
+    cost: "₹251",
   },
   {
     id: "5",
     name: "Baby Potatoes",
-    src: "",
-    cost: "",
+    src: BabyP,
+    cost: "₹179",
   },
 ];
 
@@ -140,36 +159,36 @@ import Roo from './GroceryImg/Roo.jpg'
 import Jal from './GroceryImg/JalJeera.jpg'
 import TCM from './GroceryImg/TCM.webp'
 import CD from './GroceryImg/CD.webp'
+
 export const Beverages = [
   {
     id: "1",
     name: "Masala Chai",
     src: MasalaChai,
-    cost: "",
+    cost: "₹593",
   },
   {
     id: "2",
     name: "Rooh Afza",
     src: Roo,
-    cost: "",
+    cost: "₹361",
   },
   {
     id: "3",
     name: "Jaljeera Mix",
     src: Jal,
-    cost: "",
+    cost: "₹118",
   },
   {
     id: "4",
     name: "Tender Coconut Mix",
     src: TCM,
-    cost: "",
+    cost: "₹383",
   },
   {
     id: "5",
     name: "Cold Drinks",
     src: CD,
-    cost: "",
+    cost: "₹437",
   },
-
 ];

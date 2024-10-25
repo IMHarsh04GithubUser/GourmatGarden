@@ -13,99 +13,156 @@ const Grocery = () => {
     <>
       <div className="Grocery_Header bg-danger p-2 container-fluid">
         <Navbar />
+        <div className="text-center">
+          <p className="Gift_Text">PLAY A GAME <br /> <span>AND GET A CHANCE TO WIN THESE ITEMS</span></p>
+        </div>
       </div>
 
       <div className="border_grocery_heading">
         <h1 className="text-center">BEVERAGES</h1>
       </div>
-      <div className="cards-1 d-flex flex-row gap-5 mx-5 p-5">
-      {Beverages.map((item,id) => {
-        return (
-          <>
-            <div className="card" style={{width: 18+'rem',height:18+'rem'}} key={id}>
-              <img src={item.src} class="card-img-top " style={{overflow:"hidden"}} alt="..." />
-              <div className="card-body">
-                <p>{item.name}</p>
-                <p>{item.cost}</p>
+      <div className="cards-1 d-flex flex-row gap-5 mx-5 p-5 bg-success">
+        {Beverages.map((item, id) => {
+          return (
+            <>
+              <div
+                className="card"
+                style={{ width: 18 + "rem", height: 18 + "rem" }}
+                key={id}
+              >
+                <img
+                  src={item.src}
+                  class="card-img-top "
+                  style={{ overflow: "hidden" }}
+                  alt="..."
+                />
+                <div className="card-body">
+                  <p>
+                    {item.name}{" "}
+                    <span style={{ float: "right" }}>{item.cost}</span>
+                  </p>
+                </div>
               </div>
-            </div>
-          </>
-        );
-      })}
+            </>
+          );
+        })}
       </div>
       <div className="border_grocery_heading">
         <h1 className="text-center">SPICES</h1>
       </div>
-      <div className="cards-1 d-flex flex-row gap-5 mx-5 p-5">
-      {spices.map((item,id) => {
-        return (
-          <>
-            <div className="card" style={{width: 18+'rem',height:18+'rem'}} key={id}>
-              <img src={item.src} class="card-img-top" style={{overflow:"hidden"}} alt="..." />
-              <div className="card-body">
-                <p>{item.name}</p>
-                <p>{item.cost}</p>
+      <div className="cards-1 d-flex flex-row gap-5 mx-5 p-5 bg-success">
+        {spices.map((item, id) => {
+          return (
+            <>
+              <div
+                className="card"
+                style={{ width: 18 + "rem", height: 18 + "rem" }}
+                key={id}
+              >
+                <img
+                  src={item.src}
+                  class="card-img-top"
+                  style={{ overflow: "hidden" }}
+                  alt="..."
+                />
+                <div className="card-body">
+                  <p>
+                    {item.name}{" "}
+                    <span style={{ float: "right" }}>{item.cost}</span>
+                  </p>
+                </div>
               </div>
-            </div>
-          </>
-        );
-      })}
+            </>
+          );
+        })}
       </div>
       <div className="border_grocery_heading">
         <h1 className="text-center">PULSES AND GRAINS</h1>
       </div>
-      <div className="cards-1 d-flex flex-row gap-5 mx-5 p-5">
-      {Pulses_Grains.map((item,id) => {
-        return (
-          <>
-            <div className="card" style={{width: 18+'rem',height:18+'rem'}} key={id}>
-              <img src={item.src} class="card-img-top" alt="..." />
-              <div className="card-body">
-                <p>{item.name}</p>
-                <p>{item.cost}</p>
+      <div className="cards-1 d-flex flex-row gap-5 mx-5 p-5 bg-success">
+        {Pulses_Grains.map((item, id) => {
+          return (
+            <>
+              <div
+                className="card"
+                style={{ width: 18 + "rem", height: 18 + "rem" }}
+                key={id}
+              >
+                <img
+                  src={item.src}
+                  class="card-img-top"
+                  style={{ overflow: "hidden" }}
+                  alt="..."
+                />
+                <div className="card-body">
+                  <p>
+                    {item.name}{" "}
+                    <span style={{ float: "right" }}>{item.cost}</span>
+                  </p>
+                </div>
               </div>
-            </div>
-          </>
-        );
-      })}
+            </>
+          );
+        })}
       </div>
       <div className="border_grocery_heading">
         <h1 className="text-center">COOKING ESSENTIALS</h1>
       </div>
-      <div className="cards-1 d-flex flex-row gap-5 mx-5 p-5">
-      {cooking_essential.map((item,id) => {
-        return (
-          <>
-            <div className="card" style={{width: 18+'rem',height:18+'rem'}} key={id}>
-              <img src={item.src} class="card-img-top" alt="..." />
-              <div className="card-body">
-                <p>{item.name}</p>
-                <p>{item.cost}</p>
+      <div className="cards-1 d-flex flex-row gap-5 mx-5 p-5 bg-success">
+        {cooking_essential.map((item, id) => {
+          return (
+            <>
+              <div
+                className="card"
+                style={{ width: 18 + "rem", height: 18 + "rem" }}
+                key={id}
+              >
+                <img
+                  src={item.src}
+                  class="card-img-top"
+                  style={{ overflow: "hidden" }}
+                  alt="..."
+                />
+                <div className="card-body">
+                  <p>
+                    {item.name}{" "}
+                    <span style={{ float: "right" }}>{item.cost}</span>
+                  </p>
+                </div>
               </div>
-            </div>
-          </>
-        );
-      })}
+            </>
+          );
+        })}
       </div>
       <div className="border_grocery_heading">
         <h1 className="text-center">FRESH PRODUCTS</h1>
       </div>
-      <div className="cards-1 d-flex flex-row gap-5 mx-5 p-5">
-      {Fresh_Produce.map((item,id) => {
-        return (
-          <>
-            <div className="card" style={{width: 18+'rem',height:18+'rem'}} key={id}>
-              <img src={item.src} class="card-img-top" alt="..." />
-              <div className="card-body">
-                <p>{item.name}</p>
-                <p>{item.cost}</p>
+      <div className="cards-1 d-flex flex-row gap-5 mx-5 p-5 bg-success">
+        {Fresh_Produce.map((item, id) => {
+          return (
+            <>
+              <div
+                className="card"
+                style={{ width: 18 + "rem", height: 18 + "rem" }}
+                key={id}
+              >
+                <img
+                  src={item.src}
+                  class="card-img-top"
+                  style={{ overflow: "hidden" }}
+                  alt="..."
+                />
+                <div className="card-body">
+                  <p>
+                    {item.name}{" "}
+                    <span style={{ float: "right" }}>{item.cost}</span>
+                  </p>
+                </div>
               </div>
-            </div>
-          </>
-        );
-      })}
+            </>
+          );
+        })}
       </div>
-     
     </>
   );
 };
