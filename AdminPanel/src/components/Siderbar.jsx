@@ -19,6 +19,10 @@ const Siderbar = () => {
                 <img src="" alt="" className={styles} />
                 <p>Orders</p>
             </NavLink>
+            <NavLink to="/lb" className={styles.sidebar_option}>
+                <img src="" alt="" className={styles} />
+                <p>LeaderBoard</p>
+            </NavLink>
         </div>
 
     </div>

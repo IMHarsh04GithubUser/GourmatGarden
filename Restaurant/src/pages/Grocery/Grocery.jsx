@@ -1,6 +1,8 @@
 import Navbar from "../../components/Navbar";
 import "./Grocery.css";
 import { FaLongArrowAltDown } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
+import { QuizBtn } from "./Quizbtn";
 import {
   Beverages,
   Fresh_Produce,
@@ -16,7 +18,7 @@ const Grocery = () => {
         <div className="text-center">
           <p className="Gift_Text">
             PLAY A GAME <br /> <span>AND GET A CHANCE TO WIN THESE ITEMS</span><br />
-            <FaLongArrowAltDown />
+            <NavLink to='/quiz'><QuizBtn/></NavLink>
             <span></span>
           </p>
         </div>

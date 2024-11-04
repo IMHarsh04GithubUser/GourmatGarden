@@ -7,7 +7,11 @@ const AddCategory = require("./models/AdminAdd");
 const CartPayment = require("./models/Payment");
 const ListCat = require("./models/ListCat");
 const QueryMessage = require("./models/message");
+const LeaderBoard = require("./models/LeaderBoard")
+const User = require("./models/UserScore")
+
 const multer = require("multer");
+const axios = require('axios')
 const path = require("path");
 const fs = require("fs");
 const bcrypt = require("bcrypt");
@@ -312,6 +316,64 @@ app.get("/orders", async (req, res) => {
 });
 
 // Start the server
+
+
+//Route to fetch quiz questions
+app.get('/api/quiz-questions', async (req, res) => {
+  try {
+    const response = await axios.get('https://opentdb.com/api.php?amount=10');
+    res.json(response.data);
+  } catch (error) {
+    console.error("Error fetching quiz questions:", error);
+    res.status(500).json({ error: 'Failed to fetch quiz questions' });
+  }
+});
+
+//Route to Submit quiz score
+app.post('/api/submit-quiz', async (req, res) => {
+  const { username, score } = req.body;
+  try {
+    if (!username || score === undefined) {
+      return res.status(400).json({ error: 'Username and score are required' });
+    }
+
+    // Update user score if user already exists; otherwise, create new user
+    let user = await User.findOneAndUpdate({ username }, { score }, { new: true, upsert: true });
+    
+    // Update leaderboard
+    let leaderboard = await LeaderBoard.find().sort({ score: -1 }).limit(3);
+    
+    if (leaderboard.length < 3 || score > leaderboard[2].score) {
+      // If leaderboard has less than 3 entries or new score qualifies for top 3
+      await LeaderBoard.findOneAndReplace(
+        { _id: leaderboard[2]?._id },
+        { username, score },
+        { upsert: true }
+      );
+    }
+
+    // Clean up excess records to ensure only top 3 remain on the leaderboard
+    leaderboard = await LeaderBoard.find().sort({ score: -1 }).limit(3);
+    await LeaderBoard.deleteMany({ _id: { $nin: leaderboard.map(entry => entry._id) } });
+
+    res.status(200).json({ message: 'Score submitted and leaderboard updated successfully' });
+  } catch (error) {
+    console.error("Error submitting quiz score:", error);
+    res.status(500).json({ error: 'Failed to submit quiz score' });
+  }
+});
+
+// Route to fetch leaderboard
+app.get('/api/leaderboard', async (req, res) => {
+  try {
+    const leaderboard = await LeaderBoard.find().sort({ score: -1 }).limit(3);
+    res.json(leaderboard);
+  } catch (error) {
+    console.error("Error fetching leaderboard:", error);
+    res.status(500).json({ error: 'Failed to fetch leaderboard' });
+  }
+});
+
 app.listen(3000, () => {
   console.log("Server running on port 3000");
 });
