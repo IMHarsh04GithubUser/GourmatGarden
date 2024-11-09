@@ -9,7 +9,7 @@ import  OrderOnline from "./pages/OrderHere/OrderHere";
 import { MenuTag } from "./pages/Menu/Menu";
 import SignUpform from "./components/SignUpform";
 import { CartProvider } from "./StoreContext/Storecontext";
-import {ToastContainer} from 'react-toastify'
+import {ToastContainer,toast} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
 function App() {

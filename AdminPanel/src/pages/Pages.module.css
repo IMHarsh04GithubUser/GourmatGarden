@@ -194,4 +194,21 @@
     right: 15%;
 }
 
+.leaderboard{
+    border: solid 1px;
+    position: absolute;
+    top: 30%;
+    left: 60%;
+    transform: translate(-50%,-50%);
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
+.lb_heading{
+    font-size: 40px;
+    color: green;
+    text-decoration: solid underline;
+}
