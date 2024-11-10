@@ -24,7 +24,7 @@
 
 .ContactUsContianer {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url('../../components/Images/Restaurant.jpeg');
+        url('../../assets/Images/Restaurant.jpeg5');
     height: 700px;
     background-size: cover;
 }

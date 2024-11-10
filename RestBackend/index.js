@@ -18,15 +18,19 @@ const bcrypt = require("bcrypt");
 const nodemailer = require("nodemailer");
 const bodyParser = require("body-parser");
 
+//Middleware
 const app = express();
 app.use(express.json());
 app.use(cors());
 app.use(bodyParser.json());
+
+
 // MongoDB Connection
 mongoose
   .connect("mongodb://localhost:27017/RestaurantApp", {})
   .then(() => console.log("MongoDB Started"))
   .catch((err) => console.log(err));
+
 
 // Multer Storage Setup
 const storage = multer.diskStorage({
@@ -41,8 +45,11 @@ const storage = multer.diskStorage({
     return cb(null, `${file.originalname}`);
   },
 });
-
 const upload = multer({ storage });
+
+
+
+
 
 // Register a new employee
 app.post("/register", async (req, res) => {
@@ -314,9 +321,6 @@ app.get("/orders", async (req, res) => {
     res.status(500).json({ success: false, message: "Server Error" });
   }
 });
-
-// Start the server
-
 
 //Route to fetch quiz questions
 app.get('/api/quiz-questions', async (req, res) => {
