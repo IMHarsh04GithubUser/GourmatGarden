@@ -5,12 +5,16 @@ import { FaApple } from "react-icons/fa";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../StoreContext/Storecontext";
+import { ToastContainer, toast } from 'react-toastify';
 
 const AccountDisplay = () => {
   let [email, setemail] = useState();
   let [password, setpassword] = useState();
-  let [img, setimg] = useState();
+  let [address, setaddress] = useState();
   const navigate = useNavigate();
+  const {handleLogin} = useContext(CartContext)
 
   const signupPage = () => {
     window.open("/signup", "_blank", "noopener,noreferrer");
@@ -19,19 +23,23 @@ const AccountDisplay = () => {
   const handlesubmit = (e) => {
     e.preventDefault();
     if (!email || !password) {
-      alert("Enter all the data");
+      alert("Enter all the data/Home Address Not Requuired");
       return;
     }
 
     axios
-      .post("http://localhost:3000/login", { img, email, password })
+      .post("http://localhost:3000/login", { email, password,address })
       .then((result) => {
         console.log(result);
-          navigate('/about')
+        const token = result.data.token
+        handleLogin(token)
+        toast.success(`Login Successful Welcome ${result.data.user.email}`)
+        console.log(result.data)
+          navigate('/')
       })
       .catch((err) => {
         console.error(err);
-        alert("Error");
+        alert("An Error occur During Login");
       })
       
 
@@ -67,14 +75,15 @@ const AccountDisplay = () => {
         >
           <div className={`form-group ${styles.formLogin}`}>
             <div>
-              <label htmlFor="avatarUpload">Upload Your Avatar</label>
+              <label htmlFor="address">Enter Your Address</label>
               <input
-                type="file"
-                name="avatarUpload"
-                id="avatarUpload"
+                type="text"
+                name="address"
+                id="address"
+                placeholder="Enter Home Address"
                 className="form-control border-primary"
                 onChange={(e) => {
-                  setimg(e);
+                  setaddress(e);
                 }}
               />
             </div>

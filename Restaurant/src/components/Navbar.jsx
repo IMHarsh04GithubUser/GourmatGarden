@@ -4,15 +4,21 @@ import { NavLink } from "react-router-dom";
 import { GiShoppingCart } from "react-icons/gi";
 import { GiChipsBag } from "react-icons/gi";
 import AccountDisplay from "./AccountDisplay";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { CartContext } from "../StoreContext/Storecontext";
 
 const Navbar = () => {
   const [getLoginData, setLoginData] = useState(false);
-  const [register, setregister] = useState();
+  const { handleLogout, isLoggedIn, user } = useContext(CartContext);
 
-  const ClicktoLogin = () => {
+  const toggleLoginDisplay = () => {
     setLoginData(!getLoginData);
   };
+
+  // Hide login form when logged in
+  if (isLoggedIn && getLoginData) {
+    setLoginData(false);
+  }
 
   return (
     <>
@@ -20,7 +26,12 @@ const Navbar = () => {
         <nav className={`navbar navbar-expand-lg ${styles.navbarcustom}`}>
           <div className="container-fluid">
             <div className="logo">
-              <img src={Logo} alt="" className={styles.Logo} />
+              <img
+                src={Logo}
+                alt=""
+                className={styles.Logo}
+                onClick={toggleLoginDisplay}
+              />
             </div>
             <button
               className="navbar-toggler bg-danger"
@@ -50,7 +61,6 @@ const Navbar = () => {
                     CONTACT US
                   </NavLink>
                 </li>
-
                 <li className="nav-item">
                   <NavLink className="nav-link text-warning" to="/menu">
                     MENU
@@ -58,12 +68,12 @@ const Navbar = () => {
                 </li>
                 <li className="nav-item">
                   <NavLink className="nav-link text-warning" to="/order">
-                    <GiShoppingCart className={styles.cartlogo}/>
+                    <GiShoppingCart className={styles.cartlogo} />
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className='nav-link text-warning' to='/grocery'>
-                  <GiChipsBag className={styles.cartlogo}/>
+                  <NavLink className="nav-link text-warning" to="/grocery">
+                    <GiChipsBag className={styles.cartlogo} />
                   </NavLink>
                 </li>
               </ul>
@@ -72,13 +82,28 @@ const Navbar = () => {
                   <button className={styles.glowbtn1}>BOOK YOUR TABLE</button>
                 </a>
               </div>
-              <div className={styles.SignIn} onClick={ClicktoLogin}></div>
-              
+              {isLoggedIn ? (
+                <button
+                  className={`btn btn-primary mx-3 ${styles.Logout}`}
+                  type="button"
+                  onClick={handleLogout}
+                >
+                  LOGOUT
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  className="btn btn-danger mx-3"
+                  onClick={toggleLoginDisplay}
+                >
+                  LOGIN
+                </button>
+              )}
             </div>
           </div>
         </nav>
-        <div className="displaytheLogin">
-          {getLoginData && <AccountDisplay />}
+        <div className="displaytheLogin ">
+          {getLoginData && !isLoggedIn && <AccountDisplay />}
         </div>
       </header>
     </>

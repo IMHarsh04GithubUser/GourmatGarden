@@ -6,6 +6,24 @@ export const CartContext = createContext();
 // Create a Provider component
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
+  const [isLoggedIn,setIsLoggedIn] = useState(false)
+  const [token,setToken] = useState('')
+  const [user, setUser] = useState(null); 
+
+  
+  
+
+  //Login
+  const handleLogin = (token)=>{
+    setToken(token)
+    setIsLoggedIn(true)
+  }
+
+  const handleLogout = () => {
+    setToken('')
+    setIsLoggedIn(false)
+    setUser(null)
+  }
 
   // Function to add an item to the cart
   const addToCart = (item) => {
@@ -34,8 +52,10 @@ export const CartProvider = ({ children }) => {
   // Calculate the total amount (subtotal + delivery fee)
   const totalAmount = calculateSubtotal + deliveryFee;
 
+
+
   return (
-    <CartContext.Provider value={{ cart, addToCart, handleRemove, calculateSubtotal, totalAmount }}>
+    <CartContext.Provider value={{ cart, addToCart, handleRemove, calculateSubtotal, totalAmount,handleLogin,handleLogout,isLoggedIn,token,user }}>
       {children}
     </CartContext.Provider>
   );

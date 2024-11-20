@@ -17,12 +17,16 @@ const fs = require("fs");
 const bcrypt = require("bcrypt");
 const nodemailer = require("nodemailer");
 const bodyParser = require("body-parser");
+const jwt = require("jsonwebtoken")
+
+const SECRET_KEY = "MierMOVA2"
 
 //Middleware
 const app = express();
 app.use(express.json());
 app.use(cors());
 app.use(bodyParser.json());
+
 
 
 // MongoDB Connection
@@ -76,7 +80,7 @@ app.post("/register", async (req, res) => {
 // Login an employee
 app.post("/login", async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const { email, password,address } = req.body;
 
     const user = await EmployeeModel.findOne({ email });
 
@@ -84,12 +88,14 @@ app.post("/login", async (req, res) => {
       return res.status(404).json({ message: "User does not exist" });
     }
 
-    const isPasswordValid = await bcrypt.compare(password, user.password);
+    const isPasswordValid = bcrypt.compare(password, user.password);
     if (!isPasswordValid) {
       return res.status(401).json({ message: "Invalid password" });
     }
 
-    res.status(200).json({ message: "Success", user });
+    const token = jwt.sign({ id:user.id,email:user.email,address:user.address }, SECRET_KEY, { expiresIn: '1h' });
+
+    res.status(200).json({ message: "Success", user:{email:user.email},token });
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: "Server error" });
@@ -262,7 +268,10 @@ app.post("/remove", async (req, res) => {
 //CartData
 app.post("/cartbill", async (req, res) => {
   try {
-    const { cart, address, totalAmount, email } = req.body;
+    const user = CartPayment.find({email,address,cart,totalAmount})
+    const token = jwt.sign({ id:user.id,email:user.email,address:user.address,cart:user.cart,ta:user.totalAmount }, SECRET_KEY, { expiresIn: '1h' });
+    const { cart, totalAmount } = req.body;
+    const {email,address} = req.user
     const orderedItems = cart.map(item => item.name).join(', ');
 
     console.log("Received data:", req.body);
@@ -273,7 +282,7 @@ app.post("/cartbill", async (req, res) => {
       email,
     });
     await Cart.save();
-    res.status(201).json({ message: "Cart Saved Successfully" });
+    res.status(201).json({ message: "Cart Saved Successfully",token });
 
     const transporter = nodemailer.createTransport({
       service: "gmail",

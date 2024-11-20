@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import './Quiz.css'
 import { toast } from 'react-toastify';
 import { useNavigate } from "react-router-dom";
+import { CartContext } from '../../StoreContext/Storecontext';
 
 export const Quiz = () => {
   const [questions, setQuestions] = useState([]);
@@ -14,6 +15,7 @@ export const Quiz = () => {
   const [timer, setTimer] = useState(10);
   const [startQuiz, setStartQuiz] = useState(false); // New state to control quiz start
   const navigate = useNavigate()
+  const {} = useContext(CartContext)
  
 
   useEffect(() => {
@@ -70,7 +72,7 @@ export const Quiz = () => {
   const handleSubmitQuiz = async () => {
     try {
       await axios.post('http://localhost:3000/api/submit-quiz', { username, score });
-      toast(`Quiz submitted! Final Score: ${score}`);
+      toast(`Quiz submitted! Final Score: ${score} If Win Get Free Item`);
     } catch (error) {
       console.error("Error submitting quiz score:", error);
     }
