@@ -66,14 +66,14 @@ const AddToCart = () => {
                 name=""
                 id=""
                 value={user?.address || "YOUR ADDRESS"}
-                className={styles.address_input}
+                className={`form-control ${styles.address_input}`}
                 onChange={e=>setaddress(e.target.value)}
-              />
+              /><br/>
               <input
                 type="text"
                 name=""
                 id=""
-                className={styles.address_input}
+                className={`form-control ${styles.address_input}`}
                 value={user?.email || "YOUR EMAIL"}
                 onChange={e=>setemail(e.target.value)}
               />
@@ -122,69 +122,7 @@ const AddToCart = () => {
         </>
       ) : (
         <>
-          <form onSubmit={handleCartSubmit} className={styles.MyOrder}>
-            <h1 className={`h4 text-center ${styles.MyOrders}`}>My Orders</h1>
-
-            <div className={`${styles.YourAddress}`}>
-              <p>Delivery Address</p>
-              <input
-                type="text"
-                placeholder="Enter your address"
-                value={user.email}
-                onChange={(e) => setAddress(e.target.value)}
-                required
-                className={styles.address_input}
-              />
-              <input
-                type="text"
-                placeholder="Enter your Email"
-                value={email}
-                onChange={(e) => setemail(e.target.value)}
-                required
-                className={styles.address_input}
-              />
-            </div>
-
-            <div className={styles.CartItems}>
-              <div className="ItemsIncart">
-                {cart.map((item, index) => (
-                  <div key={index} className={styles.CartItem}>
-                    <input
-                      className={`border-0 ${styles.itempricerate}`}
-                      value={item.name}
-                      readOnly
-                    />
-                  </div>
-                ))}
-              </div>
-              <p className="font-weight-bold">
-                Sub Total:{" "}
-                <span className="font-weight-bold">
-                  ₹{calculateSubtotal.toFixed(2)}
-                </span>
-              </p>
-              <p>
-                Delivery Fee: <span>{calculateSubtotal > 0 ? "2" : "0"}</span>
-              </p>
-            </div>
-
-            <div className={`${styles.TotalAmountButton}`}>
-              <p>
-                Total Amount: ₹{" "}
-                <input
-                  className={`border-0 ${styles.totalAmount}`}
-                  value={totalAmount ? totalAmount.toFixed(2) : ""}
-                  readOnly
-                />
-              </p>
-
-              <input
-                type="submit"
-                value="PROCEED"
-                className={`btn btn-primary ${styles.proceedBtn}`}
-              />
-            </div>
-          </form>
+          <p className={`${styles.LoginPlease}`}>LOGIN TO SEE CART</p>
         </>
       )}
     </>

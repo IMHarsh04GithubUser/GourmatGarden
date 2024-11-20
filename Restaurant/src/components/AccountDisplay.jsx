@@ -12,7 +12,6 @@ import { ToastContainer, toast } from 'react-toastify';
 const AccountDisplay = () => {
   let [email, setemail] = useState();
   let [password, setpassword] = useState();
-  let [address, setaddress] = useState();
   const navigate = useNavigate();
   const {handleLogin,handleData} = useContext(CartContext)
 
@@ -28,7 +27,7 @@ const AccountDisplay = () => {
     }
 
     axios
-      .post("http://localhost:3000/login", { email, password,address })
+      .post("http://localhost:3000/login", { email, password })
       .then((result) => {
         console.log(result);
         const token = result.data.token
@@ -75,19 +74,7 @@ const AccountDisplay = () => {
           onSubmit={handlesubmit}
         >
           <div className={`form-group ${styles.formLogin}`}>
-            <div>
-              <label htmlFor="address">Enter Your Address</label>
-              <input
-                type="text"
-                name="address"
-                id="address"
-                placeholder="Enter Home Address"
-                className="form-control border-primary"
-                onChange={(e) => {
-                  setaddress(e);
-                }}
-              />
-            </div>
+            
             <div>
               <label htmlFor="loginemail">Email address</label>
               <input

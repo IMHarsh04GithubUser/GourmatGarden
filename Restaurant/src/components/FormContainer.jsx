@@ -13,6 +13,7 @@ const FormContainer = () => {
   const navigate = useNavigate()
 
   const currentDate = new Date().toISOString().split("T")[0];
+  const currentTime = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
   const BookTableNow = (e) => {
        
     e.preventDefault()
@@ -109,6 +110,7 @@ const FormContainer = () => {
                 aria-describedby="Time"
                 placeholder="Time"
                 name="time" 
+                min={currentTime}
                 onChange={e=>{settime(e.target.value)}}               
               />
             </div>
