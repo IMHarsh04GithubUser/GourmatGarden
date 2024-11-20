@@ -8,18 +8,22 @@ const Payment = new mongoose.Schema({
       quantity: Number,
     },
   ],
-  address: {
-    type: String,
-    required: true,
-  },
+ 
   totalAmount: {
     type: Number,
     required: true,
   },
-  email: {
-    type: String,
-    required: true,
+
+  email:{
+    type:String
   },
+
+  address:{
+    type:String
+  }
+
+
+ 
 });
 
 const CartPayment = mongoose.model("CartBill", Payment);

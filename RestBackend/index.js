@@ -57,7 +57,7 @@ const upload = multer({ storage });
 
 // Register a new employee
 app.post("/register", async (req, res) => {
-  const { email, password } = req.body;
+  const { email, password,address } = req.body;
 
   // Check if email already exists
   const existingUser = await EmployeeModel.findOne({ email });
@@ -71,6 +71,7 @@ app.post("/register", async (req, res) => {
   const newUser = new EmployeeModel({
     email,
     password: hashedPassword,
+    address
   });
 
   await newUser.save();
@@ -94,8 +95,9 @@ app.post("/login", async (req, res) => {
     }
 
     const token = jwt.sign({ id:user.id,email:user.email,address:user.address }, SECRET_KEY, { expiresIn: '1h' });
+    console.log(user)
 
-    res.status(200).json({ message: "Success", user:{email:user.email},token });
+    res.status(200).json({ message: "Success", user:{email:user.email,address:user.address,id:user.id},token });
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: "Server error" });
@@ -268,22 +270,37 @@ app.post("/remove", async (req, res) => {
 //CartData
 app.post("/cartbill", async (req, res) => {
   try {
-    const user = CartPayment.find({email,address,cart,totalAmount})
-    const token = jwt.sign({ id:user.id,email:user.email,address:user.address,cart:user.cart,ta:user.totalAmount }, SECRET_KEY, { expiresIn: '1h' });
-    const { cart, totalAmount } = req.body;
-    const {email,address} = req.user
-    const orderedItems = cart.map(item => item.name).join(', ');
+    const { cart, totalAmount,email,address } = req.body; // Destructure from request body
+     // Ensure req.user is correctly set by middleware
 
-    console.log("Received data:", req.body);
-    const Cart = new CartPayment({
+    // Verify required data
+    if (!cart || !totalAmount || !email || !address) {
+      return res.status(400).json({ message: "Missing required fields." });
+    }
+
+    // Save cart details to database
+    const cartData = new CartPayment({
       cart,
       address,
       totalAmount,
       email,
     });
-    await Cart.save();
-    res.status(201).json({ message: "Cart Saved Successfully",token });
+    await cartData.save();
 
+    // Create a token
+    const token = jwt.sign(
+      {
+        id: cartData._id,
+        email,
+        address,
+        cart,
+        totalAmount,
+      },
+      SECRET_KEY,
+      { expiresIn: "1h" }
+    );
+
+    // Send confirmation email
     const transporter = nodemailer.createTransport({
       service: "gmail",
       host: "smtp.gmail.com",
@@ -291,34 +308,35 @@ app.post("/cartbill", async (req, res) => {
       secure: true,
       auth: {
         user: "mathurharsh020@gmail.com",
-        pass: "gvwc itho dces ybrd",
+        pass: "gvwc itho dces ybrd", // Consider using environment variables for security
       },
     });
 
+    const orderedItems = cart.map((item) => item.name).join(", ");
     const mailOptions = {
       from: '"Gourmat Garden" <gourmatgarden@gmail.com>',
       to: email,
       subject: "Order Received",
-      text: `Hello ${email},\n We have received Your order \nThank you for choosing our restaurant! \n Your Ordered Food - ${orderedItems}\n Total Amount - ${totalAmount}(CASH ON DELIVERY)\n Address- ${address}`,
+      text: `Hello ${email},\n\nWe have received your order:\n\nItems: ${orderedItems}\nTotal Amount: ₹${totalAmount} (CASH ON DELIVERY)\nDelivery Address: ${address}\n\nThank you for choosing Gourmat Garden!`,
     };
 
     transporter.sendMail(mailOptions, (err, info) => {
       if (err) {
         console.error("Error sending email:", err);
-        return res
-          .status(500)
-          .json({ message: "Error sending email: " + err.message });
-      } else {
-        console.log("Email sent:", info.response);
-        return res.status(200).json({
-          message: `Booking confirmed! An email has been sent to ${email}.`,
-        });
+        return res.status(500).json({ message: "Error sending email." });
       }
+      console.log("Email sent:", info.response);
+      res.status(201).json({
+        message: "Order placed successfully. Email sent.",
+        token,
+      });
     });
   } catch (error) {
+    console.error("Error processing cart:", error.message);
     res.status(501).json({ message: "Error in Cart" });
   }
 });
+
 
 //fetch data to Admin Panel Orders
 app.get("/orders", async (req, res) => {

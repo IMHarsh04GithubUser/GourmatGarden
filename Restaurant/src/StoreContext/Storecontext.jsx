@@ -9,8 +9,6 @@ export const CartProvider = ({ children }) => {
   const [isLoggedIn,setIsLoggedIn] = useState(false)
   const [token,setToken] = useState('')
   const [user, setUser] = useState(null); 
-
-  
   
 
   //Login
@@ -24,6 +22,10 @@ export const CartProvider = ({ children }) => {
     setIsLoggedIn(false)
     setUser(null)
   }
+
+  const handleData = (userData) => {
+    setUser(userData); // Store user details
+};
 
   // Function to add an item to the cart
   const addToCart = (item) => {
@@ -55,7 +57,7 @@ export const CartProvider = ({ children }) => {
 
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, handleRemove, calculateSubtotal, totalAmount,handleLogin,handleLogout,isLoggedIn,token,user }}>
+    <CartContext.Provider value={{ cart, addToCart, handleRemove, calculateSubtotal, totalAmount,handleLogin,handleLogout,handleData,isLoggedIn,token,user }}>
       {children}
     </CartContext.Provider>
   );

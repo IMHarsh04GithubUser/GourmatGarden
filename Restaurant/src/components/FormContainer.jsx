@@ -12,6 +12,7 @@ const FormContainer = () => {
   const [persons,setpersons] = useState()
   const navigate = useNavigate()
 
+  const currentDate = new Date().toISOString().split("T")[0];
   const BookTableNow = (e) => {
        
     e.preventDefault()
@@ -21,6 +22,7 @@ const FormContainer = () => {
       return
       
     }
+    
 
     axios.post('http://localhost:3000/booking',{name,phone,email,date,time,persons})
     .then((result)=>{console.log(result)
@@ -94,6 +96,7 @@ const FormContainer = () => {
                 aria-describedby="Date"
                 placeholder="Date"
                 name="date"
+                min={currentDate}
                 onChange={e=>{setdate(e.target.value)}}
               />
             </div>

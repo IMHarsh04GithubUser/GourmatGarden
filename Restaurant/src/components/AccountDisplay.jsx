@@ -14,7 +14,7 @@ const AccountDisplay = () => {
   let [password, setpassword] = useState();
   let [address, setaddress] = useState();
   const navigate = useNavigate();
-  const {handleLogin} = useContext(CartContext)
+  const {handleLogin,handleData} = useContext(CartContext)
 
   const signupPage = () => {
     window.open("/signup", "_blank", "noopener,noreferrer");
@@ -33,6 +33,7 @@ const AccountDisplay = () => {
         console.log(result);
         const token = result.data.token
         handleLogin(token)
+        handleData(result.data.user)
         toast.success(`Login Successful Welcome ${result.data.user.email}`)
         console.log(result.data)
           navigate('/')
