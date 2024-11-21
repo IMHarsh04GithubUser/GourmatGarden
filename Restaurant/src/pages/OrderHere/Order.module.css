@@ -121,6 +121,14 @@
     font-weight: bold;
 }
 
+.UnameCart{
+    color: red;
+    font-weight: bolder;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-left: 3px;
+}
+
 
 .InputFoodItems {
     width: 100%;
