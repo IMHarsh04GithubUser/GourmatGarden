@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./Homepage.module.css";
 import axios from 'axios'
 import { useNavigate } from "react-router-dom";
+import {  toast } from 'react-toastify';
 
 const FormContainer = () => {
   const [name,setname] = useState()
@@ -19,7 +20,7 @@ const FormContainer = () => {
     e.preventDefault()
 
     if(!name||!phone||!email||!date||!time||!persons){
-      alert("Not all Data")
+      toast.warn('Enter All The Credentials')
       return
       
     }
@@ -27,7 +28,7 @@ const FormContainer = () => {
 
     axios.post('http://localhost:3000/booking',{name,phone,email,date,time,persons})
     .then((result)=>{console.log(result)
-      alert(`Congratulations Your Seat Booked for ${date}`)
+      toast.info(`Congratulations Your Seat Booked for ${date}`)
       navigate('/')
     })
     .catch(err=>console.log("ERROR",err)
