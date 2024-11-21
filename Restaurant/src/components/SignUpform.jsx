@@ -3,13 +3,14 @@ import { useState } from "react";
 import axios from 'axios'
 import { useNavigate } from "react-router-dom";
 const SignUpform = () => {
+    let [uname,setuname] = useState()
     let [email, setemail] = useState();
     let [password, setpassword] = useState();
     let [address,setaddress] = useState()
     let navigate = useNavigate()
     const handlesubmit = (e) => {
         e.preventDefault() 
-        axios.post('http://localhost:3000/register',{email,password,address})
+        axios.post('http://localhost:3000/register',{uname,email,password,address})
         .then(result=>{console.log(result)
             navigate('/')
         })
@@ -24,6 +25,17 @@ const SignUpform = () => {
       <div className="SignUpcontainer border border-primary">
         <h1 className="display text-center">WELCOME TO GOURMAT GARDEN</h1>
         <form action="" method="post" onSubmit={handlesubmit}>
+        <div className="form-group">
+            <label htmlFor="UserName"></label>
+            <input
+              type="text"
+              id="U_name1"
+              name="UserName"
+              className="form-control"
+              placeholder="Enter Your Name"
+              onChange={(e)=>setuname(e.target.value)}
+            />
+          </div>
           <div className="form-group">
             <label htmlFor="email"></label>
             <input

@@ -1,4 +1,4 @@
-//Salad1
+// Importing Salad Images
 import Salad1 from "./Imgs/Salad1.jpg";
 import CaeserSalad from "./Imgs/CaeserSalad.webp";
 import Capsal from "./Imgs/Capsal.webp";
@@ -13,22 +13,21 @@ import Avo from "./Imgs/Avocado.avif";
 import Fruit from "./Imgs/Fruit.jpg";
 
 const SaladItems1 = [
-  { name: "Caesar Salad", rate: 1, src: Salad1 },
-  { name: "Greek Salad", rate: 2, src: CaeserSalad },
-  { name: "Caprese Salad", rate: 3, src: Capsal },
-  { name: "Cobb Salad", rate: 4, src: Cobb },
-  { name: "Spinach Salad", rate: 5, src: Spinach },
-  { name: "Chana Chaat", rate: 6, src: Chana },
-  { name: "Waldorf Salad", rate: 7, src: Waldorf },
-  { name: "SouthWest Salad", rate: 8, src: SW },
-  { name: "Quinoa Salad", rate: 9, src: Quiona },
-  { name: "Caprese Salad", rate: 10, src: CS },
-  { name: "Avocado Salad", rate: 11, src: Avo },
-  { name: "Fruit Salad", rate: 12, src: Fruit },
+  { name: "Caesar Salad", rate: 100, src: Salad1 },
+  { name: "Greek Salad", rate: 150, src: CaeserSalad },
+  { name: "Caprese Salad", rate: 200, src: Capsal },
+  { name: "Cobb Salad", rate: 250, src: Cobb },
+  { name: "Spinach Salad", rate: 300, src: Spinach },
+  { name: "Chana Chaat", rate: 350, src: Chana },
+  { name: "Waldorf Salad", rate: 400, src: Waldorf },
+  { name: "SouthWest Salad", rate: 120, src: SW },
+  { name: "Quinoa Salad", rate: 180, src: Quiona },
+  { name: "Caprese Salad", rate: 280, src: CS },
+  { name: "Avocado Salad", rate: 320, src: Avo },
+  { name: "Fruit Salad", rate: 250, src: Fruit },
 ];
 
-//Starters
-
+// Importing Starter Images
 import PT from "./StarterImg/PaneerTikka.jpeg";
 import VP from "./StarterImg/VP.jpeg";
 import AlooT from "./StarterImg/AlooT.webp";
@@ -43,21 +42,21 @@ import GolG from "./StarterImg/GolG.webp";
 import PK from "./StarterImg/PK.webp";
 
 let StarterItems = [
-  { name: "Paneer-Tikka", rate: 1, src: PT },
-  { name: "Vegetable Pakoda", rate: 2, src: VP },
-  { name: "Aloo Tikki", rate: 3, src: AlooT },
-  { name: "Hara Bhara Kabab", rate: 4, src: Hara },
-  { name: "Dahi Puri", rate: 5, src: DP },
-  { name: "Stuff Mushrooms", rate: 6, src: SM },
-  { name: "Vegetable Spring Rolls", rate: 7, src: SPR },
-  { name: "Corn Cheese Balls", rate: 8, src: CSB },
-  { name: "Bhel Puri", rate: 9, src: Bhel },
-  { name: "Chilli Paneer", rate: 10, src: ChilliP },
-  { name: "Pani Puri", rate: 11, src: GolG },
-  { name: "Palak Chaat", rate: 12, src: PK },
+  { name: "Paneer-Tikka", rate: 120, src: PT },
+  { name: "Vegetable Pakoda", rate: 200, src: VP },
+  { name: "Aloo Tikki", rate: 150, src: AlooT },
+  { name: "Hara Bhara Kabab", rate: 300, src: Hara },
+  { name: "Dahi Puri", rate: 180, src: DP },
+  { name: "Stuff Mushrooms", rate: 350, src: SM },
+  { name: "Vegetable Spring Rolls", rate: 280, src: SPR },
+  { name: "Corn Cheese Balls", rate: 250, src: CSB },
+  { name: "Bhel Puri", rate: 220, src: Bhel },
+  { name: "Chilli Paneer", rate: 300, src: ChilliP },
+  { name: "Pani Puri", rate: 120, src: GolG },
+  { name: "Palak Chaat", rate: 400, src: PK },
 ];
 
-//DrinksItems
+// Importing Drinks Images
 import MC from "./DrinksImg/MC.jpg";
 import Lassi from "./DrinksImg/Lassi.jpg";
 import JJ from "./DrinksImg/JJ.webp";
@@ -72,22 +71,21 @@ import LimeWater from "./DrinksImg/LimeWater.jpeg";
 import Chaas from "./DrinksImg/Chaas.webp";
 
 let DrinksItems = [
-  { name: "Masala Chai", rate: 1, src: MC },
-  { name: "Lassi", rate: 2, src: Lassi },
-  { name: "Jaljeera", rate: 3, src: JJ },
-  { name: "Chocolate Shake ", rate: 4, src: CSh },
-  { name: "Butterscotch Shake", rate: 5, src: ButterS },
-  { name: "Virgin Mojito", rate: 6, src: VM },
-  { name: "Mango Mint Cooler", rate: 7, src: MSC },
-  { name: "Ice Coffee", rate: 8, src: IC },
-  { name: "Tender Coconut Water", rate: 9, src: CW },
-  { name: "Thumps Up", rate: 10, src: ThumpsUp },
-  { name: "Lime Water: Salt/Sugar/Mix", rate: 11, src: LimeWater },
-  { name: "Buttermilk (Chaas)", rate: 12, src: Chaas },
+  { name: "Masala Chai", rate: 100, src: MC },
+  { name: "Lassi", rate: 150, src: Lassi },
+  { name: "Jaljeera", rate: 120, src: JJ },
+  { name: "Chocolate Shake", rate: 180, src: CSh },
+  { name: "Butterscotch Shake", rate: 200, src: ButterS },
+  { name: "Virgin Mojito", rate: 300, src: VM },
+  { name: "Mango Mint Cooler", rate: 250, src: MSC },
+  { name: "Ice Coffee", rate: 350, src: IC },
+  { name: "Tender Coconut Water", rate: 220, src: CW },
+  { name: "Thumps Up", rate: 150, src: ThumpsUp },
+  { name: "Lime Water: Salt/Sugar/Mix", rate: 100, src: LimeWater },
+  { name: "Buttermilk (Chaas)", rate: 120, src: Chaas },
 ];
 
-//LunchItems
-
+// Importing Lunch Images
 import AlooG from "./LunchImg/Alooghobi.jpg";
 import ChanaM from "./LunchImg/ChanaM.jpeg";
 import DalM from "./LunchImg/DalM.jpeg";
@@ -102,21 +100,21 @@ import AlooP from "./LunchImg/AlooP.jpg";
 import Roti from "./LunchImg/Roti.jpeg";
 
 let LunchItems = [
-  { name: "Aloo Ghobi", rate: 1, src: AlooG },
-  { name: "Chana Masala", rate: 2, src: ChanaM },
-  { name: "Dal Makhni", rate: 3, src: DalM },
-  { name: "Dum Aloo ", rate: 4, src: DumAloo },
-  { name: "Malai Kofta", rate: 5, src: MalaiK },
-  { name: "Palak Paneer", rate: 6, src: PalakP },
-  { name: "Paneer Butter Masala", rate: 7, src: PBM },
-  { name: "Rajma", rate: 8, src: Rajma },
-  { name: "Rice", rate: 9, src: Rice },
-  { name: "Vegetable Biryani", rate: 10, src: Biryani },
-  { name: "Aloo Paratha", rate: 11, src: AlooP },
-  { name: "Roti", rate: 12, src: Roti },
+  { name: "Aloo Ghobi", rate: 200, src: AlooG },
+  { name: "Chana Masala", rate: 250, src: ChanaM },
+  { name: "Dal Makhni", rate: 300, src: DalM },
+  { name: "Dum Aloo", rate: 280, src: DumAloo },
+  { name: "Malai Kofta", rate: 350, src: MalaiK },
+  { name: "Palak Paneer", rate: 320, src: PalakP },
+  { name: "Paneer Butter Masala", rate: 400, src: PBM },
+  { name: "Rajma", rate: 150, src: Rajma },
+  { name: "Rice", rate: 100, src: Rice },
+  { name: "Vegetable Biryani", rate: 200, src: Biryani },
+  { name: "Aloo Paratha", rate: 180, src: AlooP },
+  { name: "Roti", rate: 120, src: Roti },
 ];
 
-//DESSERT
+// Importing Dessert Images
 import Gulab from "./DessertImg/Gulab.webp";
 import Rasmalai from "./DessertImg/RasaMalai.jpeg";
 import Jalebi from "./DessertImg/Jalebi.jpeg";
@@ -131,22 +129,18 @@ import Balu from "./DessertImg/Balu.jpeg";
 import Rabdi from "./DessertImg/Rabdi.jpg";
 
 let DessertItems = [
-  { name: "Gulab Jamun", rate: 1, src: Gulab },
-  { name: "Rasmalai", rate: 2, src: Rasmalai },
-  { name: "Jalebi", rate: 3, src: Jalebi },
-  { name: "Kheer", rate: 4, src: Kheer },
-  { name: "Gajar ka Halwa", rate: 5, src: Gajar },
-  { name: "Rasgulla", rate: 6, src: Rasgulla },
-  { name: "Malpua", rate: 7, src: Malpua },
-  { name: "Mysore Pak", rate: 8, src: MysorePak },
-  { name: "Kulfi", rate: 9, src: Kulfi },
-  {
-    name: "Ice Cream - Stawberry/ButterScotch/Vanilla/Chocolate",
-    rate: 10,
-    src: Ice,
-  },
-  { name: "BaluShahi", rate: 11, src: Balu },
-  { name: "Rabri", rate: 12, src: Rabdi },
+  { name: "Gulab Jamun", rate: 120, src: Gulab },
+  { name: "Rasmalai", rate: 150, src: Rasmalai },
+  { name: "Jalebi", rate: 200, src: Jalebi },
+  { name: "Kheer", rate: 180, src: Kheer },
+  { name: "Gajar ka Halwa", rate: 250, src: Gajar },
+  { name: "Rasgulla", rate: 300, src: Rasgulla },
+  { name: "Malpua", rate: 280, src: Malpua },
+  { name: "Mysore Pak", rate: 350, src: MysorePak },
+  { name: "Kulfi", rate: 200, src: Kulfi },
+  { name: "Ice Cream - Stawberry/ButterScotch/Vanilla/Chocolate", rate: 250, src: Ice },
+  { name: "BaluShahi", rate: 150, src: Balu },
+  { name: "Rabri", rate: 400, src: Rabdi },
 ];
 
 export { SaladItems1, StarterItems, DrinksItems, LunchItems, DessertItems };

@@ -2,3 +2,19 @@
     margin-left:250px;
     
 }
+
+.QuizPageHome{
+    border: none;
+    color:white;
+    font-weight: bold;
+    border-radius: 20px;
+    background-color: red;
+    height: 50px;
+    width: 100px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    &:hover{
+        transform: scale(1.2);
+    }
+}

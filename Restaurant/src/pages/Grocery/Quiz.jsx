@@ -4,10 +4,12 @@ import './Quiz.css'
 import { toast } from 'react-toastify';
 import { useNavigate } from "react-router-dom";
 import { CartContext } from '../../StoreContext/Storecontext';
+import { NavLink } from 'react-router-dom';
 
 export const Quiz = () => {
+  const {isLoggedIn,user} = useContext(CartContext)
   const [questions, setQuestions] = useState([]);
-  const [username, setUsername] = useState('');
+  const [username, setUsername] = useState(user?.email);
   const [score, setScore] = useState(0);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [gameFinished, setGameFinished] = useState(false);
@@ -15,7 +17,7 @@ export const Quiz = () => {
   const [timer, setTimer] = useState(10);
   const [startQuiz, setStartQuiz] = useState(false); // New state to control quiz start
   const navigate = useNavigate()
-  const {} = useContext(CartContext)
+  
  
 
   useEffect(() => {
@@ -93,12 +95,13 @@ export const Quiz = () => {
 
   return (
     <div className="container mt-5">
+      <NavLink to='/'><button type="button" className='QuizPageHome'>HOME</button></NavLink>
       <div className="card quiz_card">
         <div className="card-body">
           <h2 className="card-title text-center">Quiz Game</h2>
-          {startQuiz ? (
+          {isLoggedIn&&startQuiz ? (
             <>
-              <p className="text-muted text-center">Username: {username}</p>
+              <p className="text-muted text-center">Username:{user?.uname}- {user?.email}</p>
               {questions.length > 0 && !gameFinished ? (
                 <div>
                   <h4 className="card-text">{questions[currentQuestionIndex].question}</h4>
@@ -115,7 +118,7 @@ export const Quiz = () => {
                     ))}
                   </div>
                 </div>
-              ) : gameFinished ? (
+              ) :isLoggedIn&&gameFinished ? (
                 <div className="text-center">
                   <p className="font-weight-bold">Quiz finished! Your final score is: {score}</p>
                   <button className="btn btn-success mt-3" onClick={handleSubmitQuiz}>Submit Quiz</button>
@@ -130,7 +133,8 @@ export const Quiz = () => {
                 type="email"
                 className="form-control my-3"
                 placeholder="Enter your Email"
-                value={username}
+                value={user?.email||'NOT LOGGED IN'}
+                readOnly
                 onChange={(e) => setUsername(e.target.value)}
               />
               <button
@@ -139,6 +143,7 @@ export const Quiz = () => {
               >
                 Start Quiz
               </button>
+              
             </div>
           )}
         </div>

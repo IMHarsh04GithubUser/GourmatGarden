@@ -33,7 +33,7 @@ const AccountDisplay = () => {
         const token = result.data.token
         handleLogin(token)
         handleData(result.data.user)
-        toast.success(`Login Successful Welcome ${result.data.user.email}`)
+        toast.success(`Welcome ${result.data.user.uname}`)
         console.log(result.data)
           navigate('/')
       })
