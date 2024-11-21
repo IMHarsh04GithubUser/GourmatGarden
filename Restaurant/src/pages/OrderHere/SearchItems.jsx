@@ -4,12 +4,14 @@ import styles from "./Order.module.css";
 import { CiSearch } from "react-icons/ci";
 import MenuContainer from "./MenuItemsContainer";
 import AddToCart from "./AddToCart";
-
-import { CartProvider } from "../../StoreContext/Storecontext";
+import { useContext } from "react";
+import { CartContext } from "../../StoreContext/Storecontext";
 
 const SearchItems = () => {
+  const {isLoggedIn} = useContext(CartContext)
   return (
-   
+    <>
+    {isLoggedIn ? (<>
       <div className={`${styles.FoodSelection_Proceed}`}>
         <div className={`${styles.SearchBar_Menu}`}>
             <p className={styles.yourcart}>YOUR CART</p>
@@ -22,6 +24,11 @@ const SearchItems = () => {
         </div>
         
       </div>
+    </>):
+    (<>
+      <div className={styles.LoginToseeCart}>Login To See Your Cart</div>
+    </>)}
+    </>  
     
   );
 };

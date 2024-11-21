@@ -10,6 +10,7 @@ export const CartProvider = ({ children }) => {
   const [token,setToken] = useState('')
   const [user, setUser] = useState(null); 
   
+  
 
   //Login
   const handleLogin = (token)=>{
@@ -57,7 +58,7 @@ export const CartProvider = ({ children }) => {
 
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, handleRemove, calculateSubtotal, totalAmount,handleLogin,handleLogout,handleData,isLoggedIn,token,user }}>
+    <CartContext.Provider value={{ cart, addToCart, handleRemove, calculateSubtotal, totalAmount,handleLogin,handleLogout,handleData,isLoggedIn,token,user,setCart }}>
       {children}
     </CartContext.Provider>
   );

@@ -112,6 +112,15 @@
     
 }
 
+.LoginToseeCart{
+    color: red;
+    height: 435px;
+    text-align: center;
+    padding-top: 200px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
 
 .InputFoodItems {
     width: 100%;

@@ -57,7 +57,7 @@ const upload = multer({ storage });
 
 // Register a new employee
 app.post("/register", async (req, res) => {
-  const { email, password,address } = req.body;
+  const { uname,email, password,address } = req.body;
 
   // Check if email already exists
   const existingUser = await EmployeeModel.findOne({ email });
@@ -66,9 +66,12 @@ app.post("/register", async (req, res) => {
     return res.status(400).json({ message: "Email already exists" });
   }
 
+  console.log(password)
+
   const hashedPassword = await bcrypt.hash(password, 10);
 
   const newUser = new EmployeeModel({
+    uname,
     email,
     password: hashedPassword,
     address
@@ -81,23 +84,25 @@ app.post("/register", async (req, res) => {
 // Login an employee
 app.post("/login", async (req, res) => {
   try {
-    const { email, password,address } = req.body;
+    const { uname,email, password,address } = req.body;
 
     const user = await EmployeeModel.findOne({ email });
 
     if (!user) {
       return res.status(404).json({ message: "User does not exist" });
     }
+    
 
     const isPasswordValid = bcrypt.compare(password, user.password);
     if (!isPasswordValid) {
       return res.status(401).json({ message: "Invalid password" });
     }
 
-    const token = jwt.sign({ id:user.id,email:user.email,address:user.address }, SECRET_KEY, { expiresIn: '1h' });
+    const token = jwt.sign({ id:user.id,uname:user.uname,email:user.email,address:user.address }, SECRET_KEY, { expiresIn: '1h' });
     console.log(user)
+    console.log(password)
 
-    res.status(200).json({ message: "Success", user:{email:user.email,address:user.address,id:user.id},token });
+    res.status(200).json({ message: "Success", user:{uname:user.uname,email:user.email,address:user.address,id:user.id},token });
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: "Server error" });
@@ -317,7 +322,7 @@ app.post("/cartbill", async (req, res) => {
       from: '"Gourmat Garden" <gourmatgarden@gmail.com>',
       to: email,
       subject: "Order Received",
-      text: `Hello ${email},\n\nWe have received your order:\n\nItems: ${orderedItems}\nTotal Amount: ₹${totalAmount} (CASH ON DELIVERY)\nDelivery Address: ${address}\n\nThank you for choosing Gourmat Garden!`,
+      text: `Hello ${email},\n\nWe have received your order:\n\nItems: ${orderedItems}\nTotal Amount: ₹${totalAmount} (CASH ON DELIVERY)\nDelivery Address: ${address}\n\nThank you for choosing Gourmat Garden!\n\nFor Quey CustomerCare Number: 1234457324`,
     };
 
     transporter.sendMail(mailOptions, (err, info) => {

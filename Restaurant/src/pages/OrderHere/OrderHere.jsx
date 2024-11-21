@@ -6,6 +6,7 @@ import Footer from "../../components/Footer"
 import Logo from "../../assets/Images/Logo.jpeg"
 
 const OrderOnline = () => {
+  
   return (
     <>
       <div className={`${styles.OrderPage} container-fluid `}>

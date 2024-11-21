@@ -3,11 +3,9 @@ import { CartContext } from "../../StoreContext/Storecontext";
 import styles from "./Order.module.css";
 
 const MenuContainer = () => {
-  const { cart, handleRemove} = useContext(CartContext);
-  
+  const { cart, handleRemove,isLoggedIn,user} = useContext(CartContext); 
 
-  console.log("Current cart items:", cart); 
-   
+  console.log("Current cart items:", cart);   
 
   return (
     <div className={`${styles.AddItemContainer}`}>
@@ -25,7 +23,7 @@ const MenuContainer = () => {
           {cart.length === 0 ? (
             <tr>
               <td colSpan="5">
-                <p className={styles.EmptyCart}>Your cart is empty</p>
+                <p className={styles.EmptyCart}>Cart is empty</p>
               </td>
             </tr>
           ) : (
