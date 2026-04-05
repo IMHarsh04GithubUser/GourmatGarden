@@ -23,6 +23,8 @@ dotenv.config();
 
 const SECRET_KEY = process.env.SECRET_KEY;
 const MONGO_URI = process.env.MONGO_URI;
+const GMAIL_USER = process.env.GMAIL_USER;
+const GMAIL_PASS = process.env.GMAIL_PASS;
 
 //Middleware
 const app = express();
@@ -126,8 +128,8 @@ app.post("/booking", async (req, res) => {
       port: 465,
       secure: true,
       auth: {
-        user: "mathurharsh020@gmail.com",
-        pass: "gvwc itho dces ybrd", // Store in .env file for security
+        user: GMAIL_USER,
+        pass: GMAIL_PASS, // Store in .env file for security
       },
     });
 
@@ -170,8 +172,8 @@ app.post("/message", async (req, res) => {
       port: 465,
       secure: true,
       auth: {
-        user: "mathurharsh020@gmail.com",
-        pass: "gvwc itho dces ybrd", // Store in .env file for security
+        user: GMAIL_USER,
+        pass: GMAIL_PASS, // Store in .env file for security
       },
     });
 
@@ -315,8 +317,8 @@ app.post("/cartbill", async (req, res) => {
       port: 465,
       secure: true,
       auth: {
-        user: "mathurharsh020@gmail.com",
-        pass: "gvwc itho dces ybrd", // Consider using environment variables for security
+        user: GMAIL_USER,
+        pass: GMAIL_PASS, // Consider using environment variables for security
       },
     });
 
