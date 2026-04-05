@@ -418,3 +418,6 @@ app.get('/api/leaderboard', async (req, res) => {
 app.listen(3000, () => {
   console.log("Server running on port 3000");
 });
+
+// Export the app for Vercel serverless functions
+module.exports = app;
