@@ -22,6 +22,7 @@ const jwt = require("jsonwebtoken")
 dotenv.config();
 
 const SECRET_KEY = process.env.SECRET_KEY;
+const MONGO_URI = process.env.MONGO_URI;
 
 //Middleware
 const app = express();
@@ -33,7 +34,7 @@ app.use(bodyParser.json());
 
 // MongoDB Connection
 mongoose
-  .connect("mongodb://localhost:27017/RestaurantApp", {})
+  .connect(MONGO_URI, {})
   .then(() => console.log("MongoDB Started"))
   .catch((err) => console.log(err));
 
