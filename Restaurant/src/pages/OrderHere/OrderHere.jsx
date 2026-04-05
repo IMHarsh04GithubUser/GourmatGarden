@@ -1,5 +1,4 @@
 import styles from "./Order.module.css";
-import Navbar from "../../components/Navbar";
 import SearchItems from "./SearchItems";
 import { NavLink } from "react-router-dom";
 import Footer from "../../components/Footer"
@@ -12,9 +11,9 @@ const OrderOnline = () => {
       <div className={`${styles.OrderPage} container-fluid `}>
         <div className={styles.TitlePage}>
           <img src={Logo} alt="Logo" className={` rounded ${styles.LogoRest}`}/>
-          <p className={styles.p1}>"Order Your Favourite Meal Online"</p>
+          <p className={styles.p1}>Order Your Favourite Meal Online</p>
           <p className={styles.p2}>
-            "Delicious Food Delivered right to your Doorstep.."
+            Delicious Food Delivered right to your Doorstep..
           </p>
           <NavLink
             to="/"

@@ -1,6 +1,5 @@
 import Navbar from "../../components/Navbar";
 import "./Grocery.css";
-import { FaLongArrowAltDown } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import { QuizBtn } from "./Quizbtn";
 import {
@@ -38,7 +37,7 @@ const Grocery = () => {
               >
                 <img
                   src={item.src}
-                  class="card-img-top "
+                  className="card-img-top"
                   style={{ overflow: "hidden" }}
                   alt="..."
                 />
@@ -67,7 +66,7 @@ const Grocery = () => {
               >
                 <img
                   src={item.src}
-                  class="card-img-top"
+                  className="card-img-top"
                   style={{ overflow: "hidden" }}
                   alt="..."
                 />
@@ -96,7 +95,7 @@ const Grocery = () => {
               >
                 <img
                   src={item.src}
-                  class="card-img-top"
+                  className="card-img-top"
                   style={{ overflow: "hidden" }}
                   alt="..."
                 />
@@ -125,7 +124,7 @@ const Grocery = () => {
               >
                 <img
                   src={item.src}
-                  class="card-img-top"
+                  className="card-img-top"
                   style={{ overflow: "hidden" }}
                   alt="..."
                 />
@@ -154,7 +153,7 @@ const Grocery = () => {
               >
                 <img
                   src={item.src}
-                  class="card-img-top"
+                  className="card-img-top"
                   style={{ overflow: "hidden" }}
                   alt="..."
                 />

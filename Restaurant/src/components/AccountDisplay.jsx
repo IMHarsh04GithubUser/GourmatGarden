@@ -2,48 +2,12 @@ import styles from "./Homepage.module.css";
 import { IoLogoGoogle } from "react-icons/io5";
 import { FaFacebook } from "react-icons/fa6";
 import { FaApple } from "react-icons/fa";
-import { useState } from "react";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import { CartContext } from "../StoreContext/Storecontext";
-import { ToastContainer, toast } from 'react-toastify';
+import { UserContext } from "../StoreContext/UserContext";
 
 const AccountDisplay = () => {
-  let [email, setemail] = useState();
-  let [password, setpassword] = useState();
-  const navigate = useNavigate();
-  const {handleLogin,handleData} = useContext(CartContext)
-
-  const signupPage = () => {
-    window.open("/signup", "_blank", "noopener,noreferrer");
-  };
-
-  const handlesubmit = (e) => {
-    e.preventDefault();
-    if (!email || !password) {
-      alert("Enter all the data/Home Address Not Requuired");
-      return;
-    }
-
-    axios
-      .post("http://localhost:3000/login", { email, password })
-      .then((result) => {
-        console.log(result);
-        const token = result.data.token
-        handleLogin(token)
-        handleData(result.data.user)
-        toast.success(`Welcome ${result.data.user.uname}`)
-        console.log(result.data)
-          navigate('/')
-      })
-      .catch((err) => {
-        console.error(err);
-        alert("An Error occur During Login");
-      })
-      
-
-  };
+  const { setemail, setpassword, signupPage, handlesubmit } =
+    useContext(UserContext);
 
   return (
     <>
@@ -74,7 +38,6 @@ const AccountDisplay = () => {
           onSubmit={handlesubmit}
         >
           <div className={`form-group ${styles.formLogin}`}>
-            
             <div>
               <label htmlFor="loginemail">Email address</label>
               <input

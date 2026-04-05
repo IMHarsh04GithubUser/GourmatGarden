@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { CartContext } from '../../StoreContext/Storecontext'; // Import the CartContext
 import { SaladItems1 } from './AllMenuItems'; // Import your salad items array
 

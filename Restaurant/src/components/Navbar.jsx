@@ -9,7 +9,7 @@ import { CartContext } from "../StoreContext/Storecontext";
 
 const Navbar = () => {
   const [getLoginData, setLoginData] = useState(false);
-  const { handleLogout, isLoggedIn, user } = useContext(CartContext);
+  const { handleLogout, isLoggedIn} = useContext(CartContext);
 
   const toggleLoginDisplay = () => {
     setLoginData(!getLoginData);

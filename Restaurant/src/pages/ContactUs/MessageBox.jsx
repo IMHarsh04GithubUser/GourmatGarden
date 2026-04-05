@@ -1,13 +1,11 @@
 import { useState } from "react";
 import "./Contact.css";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 const MessageBox1 = () => {
   const [name, setname] = useState();
   const [email, setemail] = useState();
   const [phone, setphone] = useState();
   const [message, setmessage] = useState();
-  const Navigate = useNavigate()
 
   const handleQuery = (e) => {
     e.preventDefault();

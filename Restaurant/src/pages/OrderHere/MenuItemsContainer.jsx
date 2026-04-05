@@ -1,9 +1,9 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { CartContext } from "../../StoreContext/Storecontext";
 import styles from "./Order.module.css";
 
 const MenuContainer = () => {
-  const { cart, handleRemove,isLoggedIn,user} = useContext(CartContext); 
+  const { cart, handleRemove } = useContext(CartContext); 
 
   console.log("Current cart items:", cart);   
 

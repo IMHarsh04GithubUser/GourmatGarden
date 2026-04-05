@@ -7,8 +7,8 @@ const WelcomeHere = () => {
       <div className={`d-flex ${styles.WelcomeHere}`}>
       <div className={` ${styles.WelcomeHereContent1}`}>
             <hr className="WelcomHR"/>
-            <h1 className="h1-gg">"GOURMAT GARDEN"</h1>
-            <p>"Welcome to Gourmet Garden, where culinary excellence meets a cozy, inviting atmosphere. Join us for an unforgettable dining experience filled with delectable dishes and exceptional service."</p>
+            <h1 className="h1-gg">GOURMAT GARDEN</h1>
+            <p>Welcome to Gourmet Garden, where culinary excellence meets a cozy, inviting atmosphere. Join us for an unforgettable dining experience filled with delectable dishes and exceptional service.</p>
       </div>
       <div className={` ${styles.WelcomeHereContent2}`}>
         <img src={WelcomeFoodItem} alt="Welcome" className={styles.WelcomeFoodItems} />

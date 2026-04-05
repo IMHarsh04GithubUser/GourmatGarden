@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import styles from "./Homepage.module.css";
 import Navbar from "./Navbar";
 import DiscoverMenu from "./DiscoverMenu";

@@ -2,7 +2,6 @@ import styles from "./Homepage.module.css";
 import FoodPlate1 from "../assets/Images/FoodPlate1.jpg";
 import Menu1 from "../assets/Images/Menu1.jpg";
 import Menu2 from "../assets/Images/Menu2.jpeg";
-import AccountDisplay from "./AccountDisplay";
 import { useEffect, useState } from "react";
 
 const Welcome = () => {
@@ -15,7 +14,7 @@ const Welcome = () => {
     }, 3000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [images.length]);
 
   return (
     <>

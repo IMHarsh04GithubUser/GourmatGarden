@@ -1,7 +1,4 @@
-import React from "react";
-import { FaProcedures } from "react-icons/fa";
 import styles from "./Order.module.css";
-import { CiSearch } from "react-icons/ci";
 import MenuContainer from "./MenuItemsContainer";
 import AddToCart from "./AddToCart";
 import { useContext } from "react";

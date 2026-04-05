@@ -67,7 +67,7 @@ export const MenuTag = () => {
           )}
           
           <div className="WelcomeToMenu">
-            <p>GOURMET GARDEN'S </p>
+            <p>GOURMET GARDEN’S </p>
             <p>MENU</p>
             <p>
               {" "}
