@@ -9,7 +9,7 @@ const ListCat = require("./models/ListCat");
 const QueryMessage = require("./models/message");
 const LeaderBoard = require("./models/LeaderBoard")
 const User = require("./models/UserScore")
-
+const dotenv = require("dotenv");
 const multer = require("multer");
 const axios = require('axios')
 const path = require("path");
@@ -19,7 +19,9 @@ const nodemailer = require("nodemailer");
 const bodyParser = require("body-parser");
 const jwt = require("jsonwebtoken")
 
-const SECRET_KEY = "MierMOVA2"
+dotenv.config();
+
+const SECRET_KEY = process.env.SECRET_KEY;
 
 //Middleware
 const app = express();
