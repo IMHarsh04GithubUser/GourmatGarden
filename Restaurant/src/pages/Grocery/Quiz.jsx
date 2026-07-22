@@ -7,7 +7,8 @@ import { CartContext } from '../../StoreContext/Storecontext';
 import { NavLink } from 'react-router-dom';
 
 export const Quiz = () => {
-  const {isLoggedIn,user} = useContext(CartContext)
+  const { isLoggedIn, user } = useContext(CartContext);
+  const API_BASE_URL = import.meta.env.VITE_API_URL?.replace(/\/$/, "") || "http://localhost:3000";
   const [questions, setQuestions] = useState([]);
   const [username, setUsername] = useState(user?.email);
   const [score, setScore] = useState(0);
@@ -23,7 +24,7 @@ export const Quiz = () => {
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/quiz-questions');
+        const response = await axios.get(`${API_BASE_URL}/api/quiz-questions`);
         setQuestions(response.data.results);
       } catch (error) {
         console.error("Error fetching quiz questions:", error);
@@ -59,7 +60,7 @@ export const Quiz = () => {
     return () => clearInterval(interval);
   }, [timer, currentQuestionIndex, questions.length]);
 
-  const shuffleArray = (array) => array.sort(() => Math.random() - 0.5);
+  const shuffleArray = (array) => [...array].sort(() => Math.random() - 0.5);
 
   const handleAnswer = (isCorrect) => {
     if (isCorrect) setScore(score + 1);
@@ -73,7 +74,7 @@ export const Quiz = () => {
 
   const handleSubmitQuiz = async () => {
     try {
-      await axios.post('http://localhost:3000/api/submit-quiz', { username, score });
+      await axios.post(`${API_BASE_URL}/api/submit-quiz`, { username, score });
       toast(`Quiz submitted! Final Score: ${score} If Win Get Free Item`);
     } catch (error) {
       console.error("Error submitting quiz score:", error);
